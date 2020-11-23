@@ -7,6 +7,8 @@ use BugsManager\BugsManager;
 
 $telegramBot = new \TelegramBot\TelegramBot(TOKEN, file_get_contents('php://input'), new \Curl\Curl());
 
+$telegramBot->sendMessage($telegramBot->getChatId(), 'How are you??');
+
 if ($telegramBot->messageHas('~^/help~'))
 {
     $telegramBot->sendMessage($telegramBot->getChatId(),
@@ -21,7 +23,8 @@ if ($telegramBot->messageHas('~^/help~'))
 
 if ($telegramBot->messageHas('~^/getBugs (?<flag>\d)~', $matches))
 {
-    // Почему тут не нужно обьявление $arResult и $message
+    $arResult = [];
+    $message = '';
     if ($matches['flag']) {
         $arResult = BugsManager::getAllBugs();
         $message = '-- Список не исправленных багов --%0A';
@@ -30,44 +33,39 @@ if ($telegramBot->messageHas('~^/getBugs (?<flag>\d)~', $matches))
         $message = '-- Список исправленных багов --%0A';
     }
 
-    for ($i = 0; $i < count($arResult); $i++)
-    {
+    for ($i = 0; $i < count($arResult); $i++) {
         $message .=
-            'Описание бага: ' . $arResult[$i]['description_bug'] . '%0A' .
-            'bug ID - ' . $arResult[$i]['id'] . '%0A';
+            'Баг №' . $arResult[$i]['id'] . '%0A' .
+            'Описание: ' . $arResult[$i]['description_bug'];
     }
     $telegramBot->sendMessage($telegramBot->getChatId(), $message);
 }
 
-if ($telegramBot->messageHas('~^/getBug (?<id>\d+)~', $matches))
-{
-    $message = 'bug ID: ' . $matches['id'] . '%0A' .
-    BugsManager::getDescriptionByID($matches['id'])['description_bug'];
-
+if ($telegramBot->messageHas('~^/getBug (?<id>\d+)~', $matches)) {
+    $message = 'Баг №' . $matches['id'] . '%0A' . 'Описание: ' .
+            BugsManager::getDescriptionByID($matches['id'])['description_bug'];
     $telegramBot->sendMessage($telegramBot->getChatId(), $message);
 }
 
-if ($telegramBot->messageHas('~^/fixBug (?<id>\d+)~', $matches))
-{
+if ($telegramBot->messageHas('~^/fixBug (?<id>\d+)~', $matches)) {
     $message = '';
     if (BugsManager::fixBugID($matches['id'])) {
         $message = 'Баг с ID ' . $matches['id'] . ' был помечен как исправленный';
     } else {
         $message = '[ERROR] Внутренняя ошибка, обратитесь к разработчикам';
     }
-
     $telegramBot->sendMessage($telegramBot->getChatId(), $message);
 }
 
-if ($telegramBot->messageHas('~^/showCountFixBugs~')){
+if ($telegramBot->messageHas('~^/showCountFixBugs~')) {
     $telegramBot->sendMessage($telegramBot->getChatId(), 'Количество исправленных багов - ' . BugsManager::getCountBug(true));
 }
 
-if ($telegramBot->messageHas('~^/showCountAllBugs~')){
+if ($telegramBot->messageHas('~^/showCountAllBugs~')) {
     $telegramBot->sendMessage($telegramBot->getChatId(), 'Общее количество багов - ' . BugsManager::getCountBug());
 }
 
-if ($telegramBot->messageHas('~^/getChatID~')){
+if ($telegramBot->messageHas('~^/getChatID~')) {
     $telegramBot->sendMessage($telegramBot->getChatId(), 'ChatID: ' . $telegramBot->getChatId());
 }
 
@@ -77,8 +75,8 @@ if ($telegramBot->messageHas('~^#баг~') && strcmp($telegramBot->getChatId(), 
 
     if (BugsManager::addNewBug($message)) {
         $message_for_testers =
-            'Пользователь - ' . $telegramBot->getUserName() . '%0A' .
-            'заметил баг bugID: ' . BugsManager::getCountBug() . '%0A' .
+            'Баг №' . BugsManager::getCountBug() . '%0A' .
+            'Автор: ' . $telegramBot->getUserName() . '%0A' .
             'Описание: ' . $message;
 
     } else {
