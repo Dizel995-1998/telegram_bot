@@ -1,0 +1,19 @@
+{
+    "name": "dizel/site1",
+    "require": {
+        "ext-curl": "*",
+        "ext-fileinfo": "*",
+        "ext-json": "*",
+      "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "TelegramBot\\" : "Classes/",
+            "Curl\\" : "Classes/",
+            "BugsManager\\" : "Classes/",
+            "TelegramBotInterface\\" : "Interfaces/",
+            "CurlInterface\\" : "Interfaces/",
+            "\\" : ""
+        }
+    }
+}
