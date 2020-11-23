@@ -2,9 +2,7 @@
 
 namespace Curl;
 
-use CurlInterface\CurlInterface;
-
-class Curl //implements CurlInterface
+class Curl
 {
     private $curl;
     private $response;

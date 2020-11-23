@@ -2,11 +2,9 @@
 
 namespace TelegramBot;
 
-use Couchbase\Exception;
 use Curl\Curl;
-use TelegramBotInterface\TelegramBotInterface;
 
-class TelegramBot //implements TelegramBotInterface
+class TelegramBot
 {
     private array $allowFileType = ['document', 'video', 'audio', 'photo'];
     private string $token;
@@ -63,6 +61,13 @@ class TelegramBot //implements TelegramBotInterface
         $this->curl->sendRequest($url, 'POST');
     }
 
+    /**
+     * @deprecated
+     * @param $chatId
+     * @param $fileId
+     * @param false $captionText
+     * @throws \Exception
+     */
     public function sendDocument($chatId, $fileId, $captionText = false)
     {
         $url = $this->telegramUrl . '/sendDocument?chat_id=' . $chatId;
@@ -75,6 +80,13 @@ class TelegramBot //implements TelegramBotInterface
         $this->curl->sendRequest($url, 'POST');
     }
 
+    /**
+     * @deprecated
+     * @param $chatId
+     * @param $fileId
+     * @param $captionText
+     * @throws \Exception
+     */
     public function sendAudio($chatId, $fileId, $captionText)
     {
         $url = $this->telegramUrl . '/sendDocument?chat_id=' . $chatId;
@@ -87,6 +99,13 @@ class TelegramBot //implements TelegramBotInterface
         $this->curl->sendRequest($url, 'POST');
     }
 
+    /**
+     * @deprecated
+     * @param $chatId
+     * @param $fileId
+     * @param false $captionText
+     * @throws \Exception
+     */
     public function sendPhoto($chatId, $fileId, $captionText = false)
     {
         $url = $this->telegramUrl . '/sendPhoto?chat_id=' . $chatId;
@@ -99,6 +118,13 @@ class TelegramBot //implements TelegramBotInterface
         $this->curl->sendRequest($url, 'POST');
     }
 
+    /**
+     * @deprecated
+     * @param $chatId
+     * @param $fileId
+     * @param false $captionText
+     * @throws \Exception
+     */
     public function sendVideo($chatId, $fileId, $captionText = false)
     {
         $url = $this->telegramUrl . '/sendVideo?chat_id=' . $chatId;
@@ -111,12 +137,9 @@ class TelegramBot //implements TelegramBotInterface
         $this->curl->sendRequest($url, 'POST');
     }
 
-    public function messageHas($message): bool
+    public function messageHas($pattern, &$matches = false)
     {
-        if (strpos($this->textMessage, $message) === false)
-            return false;
-        else
-            return true;
+        return preg_match($pattern, $this->textMessage, $matches);
     }
 
     public function sendMessage($chatId, $message)
