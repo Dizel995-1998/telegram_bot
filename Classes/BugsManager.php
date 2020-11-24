@@ -9,13 +9,11 @@ class BugsManager
         return getPDOConnection();
     }
 
-    public static function getCountBugT($countFix = false) : int
+    public static function getCountBugT(bool $countFix = false) : int
     {
-        if (!$countFix) {
-            $data = self::getDbConnection()->query("SELECT COUNT(*) FROM bugs_manager");
-        } else {
-            $data = self::getDbConnection()->query("SELECT COUNT(*) FROM bugs_manager WHERE fix_flag is NOT NULL");
-        }
+        $data = ($countFix) ?
+            self::getDbConnection()->query("SELECT COUNT(*) FROM bugs_manager WHERE fix_flag is NOT NULL") :
+            self::getDbConnection()->query("SELECT COUNT(*) FROM bugs_manager");
         return $data->fetchColumn();
     }
 
