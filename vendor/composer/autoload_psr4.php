@@ -8,8 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     '\\' => array($baseDir . '/'),
     'TelegramBot\\' => array($baseDir . '/Classes'),
-    'TelegramBotInterface\\' => array($baseDir . '/Interfaces'),
+    'Logger\\' => array($baseDir . '/Classes'),
     'Curl\\' => array($baseDir . '/Classes'),
-    'CurlInterface\\' => array($baseDir . '/Interfaces'),
     'BugsManager\\' => array($baseDir . '/Classes'),
 );

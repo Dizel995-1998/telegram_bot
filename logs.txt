@@ -1,0 +1,4 @@
+[25-Nov-2020 16:36:09 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/site1/Classes/TelegramBot.php on line 87
+[25-Nov-2020 16:36:09 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/site1/Classes/TelegramBot.php on line 87
+[25-Nov-2020 16:40:20 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/site1/Classes/TelegramBot.php on line 87
+[25-Nov-2020 16:40:20 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/site1/Classes/TelegramBot.php on line 87

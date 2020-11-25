@@ -11,8 +11,7 @@
             "TelegramBot\\" : "Classes/",
             "Curl\\" : "Classes/",
             "BugsManager\\" : "Classes/",
-            "TelegramBotInterface\\" : "Interfaces/",
-            "CurlInterface\\" : "Interfaces/",
+            "Logger\\" : "Classes/",
             "\\" : ""
         }
     }

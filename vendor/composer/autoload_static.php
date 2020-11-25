@@ -14,12 +14,14 @@ class ComposerStaticInit4cbd862ee94adc0c9751bba458336316
         'T' => 
         array (
             'TelegramBot\\' => 12,
-            'TelegramBotInterface\\' => 21,
+        ),
+        'L' => 
+        array (
+            'Logger\\' => 7,
         ),
         'C' => 
         array (
             'Curl\\' => 5,
-            'CurlInterface\\' => 14,
         ),
         'B' => 
         array (
@@ -36,17 +38,13 @@ class ComposerStaticInit4cbd862ee94adc0c9751bba458336316
         array (
             0 => __DIR__ . '/../..' . '/Classes',
         ),
-        'TelegramBotInterface\\' => 
+        'Logger\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Interfaces',
+            0 => __DIR__ . '/../..' . '/Classes',
         ),
         'Curl\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Classes',
-        ),
-        'CurlInterface\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Interfaces',
         ),
         'BugsManager\\' => 
         array (

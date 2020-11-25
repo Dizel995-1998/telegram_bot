@@ -33,7 +33,7 @@ class BugsManager
         return (bool) $stmt->execute([':description_bug' => $description_bug]);
     }
 
-    public static function fixBugID($bugID)
+    public static function fixBugID($bugID) : bool
     {
         $stmt = self::getDbConnection()->prepare("UPDATE bugs_manager SET fix_flag = 1 WHERE id = :id");
         return (bool) $stmt->execute([':id' => $bugID]);

@@ -1,0 +1,43 @@
+[25/11/2020 16:04:13]audio
+[25/11/2020 16:04:13]Тип файла: audio
+[25/11/2020 16:04:13][ERROR] 400
+[25/11/2020 16:04:13][ERROR] Bad Request: there is no audio in the request
+[25/11/2020 16:07:55]document
+[25/11/2020 16:07:55]Тип файла: document
+[25/11/2020 16:07:55][ERROR] 400
+[25/11/2020 16:07:55][ERROR] Bad Request: there is no document in the request
+[25/11/2020 16:09:12]document
+[25/11/2020 16:09:12]Тип файла: document
+[25/11/2020 16:09:13][ERROR] 400
+[25/11/2020 16:09:13][ERROR] Bad Request: there is no document in the request
+[25/11/2020 16:10:00]message
+[25/11/2020 16:10:00]Тип файла: message
+[25/11/2020 16:10:21]message
+[25/11/2020 16:10:25]document
+[25/11/2020 16:10:25][ERROR] 400
+[25/11/2020 16:10:25][ERROR] Bad Request: there is no document in the request
+[25/11/2020 16:12:37]document
+[25/11/2020 16:12:37][ERROR] 400
+[25/11/2020 16:12:37][ERROR] Bad Request: there is no document in the request
+[25/11/2020 16:25:19]message
+[25/11/2020 16:25:33]document
+[25/11/2020 16:25:33][ERROR] 400
+[25/11/2020 16:25:33][ERROR] Bad Request: there is no document in the request
+[25/11/2020 16:28:06]document
+[25/11/2020 16:28:06][ERROR] Текст из сообщения: привет мри
+[25/11/2020 16:28:06][ERROR] 400
+[25/11/2020 16:28:06][ERROR] Bad Request: there is no document in the request
+[25/11/2020 16:32:09]document
+[25/11/2020 16:32:09]URL: https://api.telegram.org/bot1104270168:AAF_MG47TJ5HI5d_t7DK92wejR0Mvy_gBZk/sendDocument?chat_id=691046923&text=ааа
+[25/11/2020 16:32:10][ERROR] Текст из сообщения: ааа
+[25/11/2020 16:32:10][ERROR] 400
+[25/11/2020 16:32:10][ERROR] Bad Request: there is no document in the request
+[25/11/2020 16:36:09]message
+[25/11/2020 16:36:09]URL: https://api.telegram.org/bot1104270168:AAF_MG47TJ5HI5d_t7DK92wejR0Mvy_gBZk/sendMessage?chat_id=691046923&text=sss
+[25/11/2020 16:36:15]document
+[25/11/2020 16:36:15]URL: https://api.telegram.org/bot1104270168:AAF_MG47TJ5HI5d_t7DK92wejR0Mvy_gBZk/sendMessage?chat_id=691046923&text=sss
+[25/11/2020 16:40:16]document
+[25/11/2020 16:40:16]URL: https://api.telegram.org/bot1104270168:AAF_MG47TJ5HI5d_t7DK92wejR0Mvy_gBZk/sendMessage?chat_id=691046923&text=ыы
+[25/11/2020 16:40:20]message
+[25/11/2020 16:42:01]document
+[25/11/2020 16:42:01]URL: https://api.telegram.org/bot1104270168:AAF_MG47TJ5HI5d_t7DK92wejR0Mvy_gBZk/sendMessage?chat_id=691046923&text=documents/file_9.zip
