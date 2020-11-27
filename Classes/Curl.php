@@ -17,6 +17,11 @@ class Curl
         curl_setopt($this->curl, CURLOPT_HEADER, false);
     }
 
+    public function setCookie(string $cookie)
+    {
+        curl_setopt($this->curl, CURLOPT_COOKIE, $cookie);
+    }
+
     public function setHeaders($headers = []) : void
     {
         curl_setopt($this->curl, CURLOPT_HEADER, $headers);
@@ -35,11 +40,17 @@ class Curl
 
         curl_setopt($this->curl, CURLOPT_URL, $URL);
         curl_setopt($this->curl, CURLOPT_CUSTOMREQUEST, $method);
+
         $this->response = curl_exec($this->curl);
     }
 
     public function getResponse() : string
     {
         return $this->response;
+    }
+
+    public function getResponseCode() : int
+    {
+        return curl_getinfo($this->curl, CURLINFO_HTTP_CODE);
     }
 }

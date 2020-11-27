@@ -32,12 +32,3 @@
 [25/11/2020 16:32:10][ERROR] Текст из сообщения: ааа
 [25/11/2020 16:32:10][ERROR] 400
 [25/11/2020 16:32:10][ERROR] Bad Request: there is no document in the request
-[25/11/2020 16:36:09]message
-[25/11/2020 16:36:09]URL: https://api.telegram.org/bot1104270168:AAF_MG47TJ5HI5d_t7DK92wejR0Mvy_gBZk/sendMessage?chat_id=691046923&text=sss
-[25/11/2020 16:36:15]document
-[25/11/2020 16:36:15]URL: https://api.telegram.org/bot1104270168:AAF_MG47TJ5HI5d_t7DK92wejR0Mvy_gBZk/sendMessage?chat_id=691046923&text=sss
-[25/11/2020 16:40:16]document
-[25/11/2020 16:40:16]URL: https://api.telegram.org/bot1104270168:AAF_MG47TJ5HI5d_t7DK92wejR0Mvy_gBZk/sendMessage?chat_id=691046923&text=ыы
-[25/11/2020 16:40:20]message
-[25/11/2020 16:42:01]document
-[25/11/2020 16:42:01]URL: https://api.telegram.org/bot1104270168:AAF_MG47TJ5HI5d_t7DK92wejR0Mvy_gBZk/sendMessage?chat_id=691046923&text=documents/file_9.zip

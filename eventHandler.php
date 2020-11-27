@@ -24,24 +24,22 @@ if ($telegramBot->getMessageType() != "message") {
     $telegramBot->sendMessage($currentChatID, "message", $message);
 }
 
-die();
-
 if ($telegramBot->replyMessage() && $telegramBot->messageHas('~^#fixed~') && strcmp($currentChatID, TEST_GROUP_CHAT_ID) === 0) {
     $message = $telegramBot->getReplyOriginText();
     $telegramBot->sendMessage(COMMON_GROUP_CHAT_ID, 'message', '-- Данный баг был исправлен --');
-    $telegramBot->sendMessage(COMMON_GROUP_CHAT_ID, 'message', urlencode($message));
+    $telegramBot->sendMessage(COMMON_GROUP_CHAT_ID, 'message', $message);
 }
 
 if ($telegramBot->messageHas('~^/help~')) {
     $telegramBot->sendMessage($currentChatID, 'message',
-        '/getInstructions - получить инструкцию по использованию бота%0A' .
-        '/getChatID - вывести ID чата%0A' .
-        '#fixed - при ответе на сообщение с багом, отмечает баг как исправленный%0A' .
-        '/showCountAllBugs - счётчик общего количества багов%0A' .
-        '/showCountFixBugs - количество исправленных багов%0A' .
-        '/fixBug [id] - отметить баг с ID как исправленный%0A' .
-        '/getBug [id] - получить описание бага с ID%0A' .
-        '/getBugs [flag] - если flag = 1, возвращает список исправленных багов, иначе не исправленных%0A'
+        '/getInstructions - получить инструкцию по использованию бота' . PHP_EOL .
+        '/getChatID - вывести ID чата' . PHP_EOL .
+        '#fixed - при ответе на сообщение с багом, отмечает баг как исправленный' . PHP_EOL .
+        '/showCountAllBugs - счётчик общего количества багов' . PHP_EOL .
+        '/showCountFixBugs - количество исправленных багов' . PHP_EOL .
+        '/fixBug [id] - отметить баг с ID как исправленный' . PHP_EOL .
+        '/getBug [id] - получить описание бага с ID' . PHP_EOL .
+        '/getBugs [flag] - если flag = 1, возвращает список исправленных багов, иначе не исправленных' . PHP_EOL
     );
 }
 
@@ -52,11 +50,7 @@ if ($telegramBot->messageHas('~^/getInstructions~')) {
         диагностики бага. Когда баг будет исправлен, нужно ответить на сообщение бота с описанием бага
         сообщением с хэштегом #fixed, сообщение будет передано пользователям с пометкой - исправленно';
     $message = preg_replace('/\s+/', ' ', $message);
-    $telegramBot->sendMessage($currentChatID, 'message', urlencode($message));
-}
-
-if ($telegramBot->messageHas('~/test~')) {
-    $telegramBot->sendMessage($currentChatID, 'message', 'Hello World%0AhELLO World');
+    $telegramBot->sendMessage($currentChatID, 'message', $message);
 }
 
 if ($telegramBot->messageHas('~^/getBugs (?<flag>\d)~', $matches)) {
@@ -64,15 +58,15 @@ if ($telegramBot->messageHas('~^/getBugs (?<flag>\d)~', $matches)) {
     $message = '';
     if ($matches['flag']) {
         $arResult = BugsManager::getAllBugs();
-        $message = '-- Список не исправленных багов --%0A';
+        $message = '-- Список не исправленных багов --' . PHP_EOL;
     } else {
         $arResult = BugsManager::getAllBugs(true);
-        $message = '-- Список исправленных багов --%0A';
+        $message = '-- Список исправленных багов --' . PHP_EOL;
     }
 
     for ($i = 0; $i < count($arResult); $i++) {
         $message .=
-            'Баг №' . $arResult[$i]['id'] . '%0A' .
+            'Баг №' . $arResult[$i]['id'] . '' . PHP_EOL .
             'Описание: ' . $arResult[$i]['description_bug'];
     }
     if (!$telegramBot->sendMessage($currentChatID, 'message', $message)) {
@@ -82,7 +76,7 @@ if ($telegramBot->messageHas('~^/getBugs (?<flag>\d)~', $matches)) {
 
 if ($telegramBot->messageHas('~^/getBug (?<id>\d+)~', $matches)) {
     $message =
-        'Баг №' . $matches['id'] . '%0A' . 'Описание: ' .
+        'Баг №' . $matches['id'] . PHP_EOL . 'Описание: ' .
         BugsManager::getDescriptionByID($matches['id'])['description_bug'];
         $telegramBot->sendMessage($currentChatID, 'message', $message);
 }
@@ -111,8 +105,8 @@ if ($telegramBot->messageHas('~^#баг~') && strcmp($currentChatID, COMMON_GROU
     $message = str_replace('#баг', '', $telegramBot->getTextFromMessage());
 
     $message_for_testers = BugsManager::addNewBug($message) ?
-        'Баг №' . BugsManager::getCountBug() . '%0A' .
-        'Автор: ' . $telegramBot->getUserName() . '%0A' .
+        'Баг №' . BugsManager::getCountBug() . PHP_EOL .
+        'Автор: ' . $telegramBot->getUserName() . PHP_EOL .
         'Описание: ' . $message
         :
         '[ERROR] Свяжитесь с разработчиками, не удалось записать баг в БД';

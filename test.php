@@ -3,21 +3,20 @@
 require_once 'vendor/autoload.php';
 require_once 'settings.php';
 
-/*
-$telegramBot = new \TelegramBot\TelegramBot(TOKEN, file_get_contents('php://input'), new \Curl\Curl());
-$telegramBot->sendMessage(COMMON_GROUP_CHAT_ID, 'Hello World');
-*/
+use Curl\Curl;
 
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
-$message = 'hello world';
-$second_message = "hello world";
+$key = '010ef0062b53ab1e9b7ac112dca9f805';
+$token = 'af6ee7700002364f55f5224edaba230109d366cf22ef74e6c01621491d7b6953';
 
-if ($message == $second_message)
-    echo '=';
-else
-    echo '!=';
+$trelloCard = new \Trello\TrelloCard();
+$result = $trelloCard->getName('IhZLpUak');
+var_dump($result);
+//$trelloList->setName('5fbe644ac20bdb66691ce589', 'Моя старая вселенная');
 
-//var_dump($arResult);
+die();
+$trelloList->setName('5fbe644ac20bdb66691ce589', 'Моя новая вселенная');
+

@@ -10,29 +10,24 @@ class TelegramBot
 {
     private array $allowFileType = ["document", "video", "audio", "photo", "message"];
     private string $token;
-    private string $telegramUrl = 'https://api.telegram.org/bot';
+    private string $telegramUrl = 'https://api.telegram.org/';
     private string $textMessage;
     private $messageID;
     private $fileId;
     private $chatId;
     private $userName;
-    private string $messageType = "message";
+    private string $messageType = "message"; // избавиться от инициализации
     private bool $replyMessageFlag = false;
-    private $replyMessageText;
-    private $replyMessageID;
-    private $errorCode;
-    private $errorDescription;
+    private string $replyMessageText;
+    private int $replyMessageID;
+    private int $errorCode;
+    private string $errorDescription;
     private Curl $curl;
 
     public function __construct($token, $incomingData, Curl $curl)
     {
         $this->token = $token;
-        $this->telegramUrl .= $this->token; // РАЗЬЕДЕНИТЬ
         $this->curl = $curl;
-
-        // ДЛЯ ТЕСТА
-        $file = fopen('telegram_answer.txt', 'a+');
-        fwrite($file, $incomingData);
 
         $incomingData = json_decode($incomingData, JSON_UNESCAPED_UNICODE);
         /* Получение данных из телеграмм сообщения */
@@ -58,8 +53,10 @@ class TelegramBot
             $this->replyMessageFlag = isset($incomingData['message']['reply_to_message']);
 
             if ($this->replyMessageFlag) {
-                $this->replyMessageID = $incomingData['message']['reply_to_message']['message_id'];
-                $this->replyMessageText = $incomingData['message']['reply_to_message']['text'];
+                $this->replyMessageID = isset($incomingData['message']['reply_to_message']['message_id']) ?
+                    $incomingData['message']['reply_to_message']['message_id'] : 0;
+                $this->replyMessageText = isset($incomingData['message']['reply_to_message']['text']) ?
+                    $incomingData['message']['reply_to_message']['text'] : " ";
             }
 
             foreach ($this->allowFileType as $type) {
@@ -68,18 +65,6 @@ class TelegramBot
                     break;
                 }
             }
-
-            Logger::writeLine($this->messageType);
-
-            /*
-            foreach ($this->allowFileType as $type) {
-                if (isset($incomingData["message"][$type])) {
-                    $this->messageType = $type;
-                    Logger::writeLine('MessageType: ' . gettype($this->messageType));
-                    break;
-                }
-            }
-            */
 
             if ($this->messageType == "photo") {
                 $this->fileId = $incomingData["message"]["photo"][0]["file_id"];
@@ -100,18 +85,18 @@ class TelegramBot
 
     /**
      * @description Возвращает текст сообщения на которое ссылается текущее сообщение
-     * @return mixed
+     * @return string
      */
-    public function getReplyOriginText()
+    public function getReplyOriginText() : string
     {
         return $this->replyMessageText;
     }
 
     /**
      * @description Возвращает ID сообщения на которое ссылается текущее сообщение
-     * @return mixed
+     * @return int
      */
-    public function getReplyMessageID()
+    public function getReplyMessageID() : int
     {
         return $this->replyMessageID;
     }
@@ -130,7 +115,9 @@ class TelegramBot
         if (!in_array($messageType, $this->allowFileType)) {
             throw new Exception('Dont supported this file type, see allow types');
         }
-        $url = $this->telegramUrl . '/send' . ucfirst($messageType) . '?chat_id=' . $chatID;
+        $messageText = urlencode($messageText); // Возможно нужно убрать
+
+        $url = $this->telegramUrl . 'bot' . $this->token . '/send' . ucfirst($messageType) . '?chat_id=' . $chatID;
         $url .= ($messageType == 'message') ? '&text=' . $messageText : '&caption=' . $messageText;
 
         Logger::writeLine("URL: " . $url);
@@ -229,21 +216,21 @@ class TelegramBot
     }
 
     /**
-     * @description Возвращает описание ошибки, если она есть
-     * @return false
+     * @description Возвращает описание ошибки, если ошибки нет вернёт пустую строку
+     * @return string
      */
-    public function getErrorDescription()
+    public function getErrorDescription() : string
     {
-        return empty($this->errorDescription) ? false : $this->errorDescription;
+        return empty($this->errorDescription) ? " " : $this->errorDescription;
     }
 
     /**
-     * @description Возвращает код ошибки, если она есть
-     * @return false
+     * @description Возвращает код ошибки, если ошибки нет вернёт 0
+     * @return int
      */
-    public function getErrorCode()
+    public function getErrorCode() : int
     {
-        return empty($this->errorCode) ? false : $this->errorCode ;
+        return empty($this->errorCode) ? 0 : $this->errorCode ;
     }
     
     /**
@@ -263,9 +250,11 @@ class TelegramBot
      */
     public function getReferenceByFileID($fileID) : string
     {
-        $url = $this->telegramUrl . '/getFile?file_id=' . $fileID;
+        $url = $this->telegramUrl . 'bot' . $this->token .'/getFile?file_id=' . $fileID;
         $this->curl->sendRequest($url);
         $response = json_decode($this->curl->getResponse(), true);
-        return ($response['ok'] == true) ? $response['result']['file_path'] : ' ';
+        return ($response['ok'] == true) ?
+            $this->telegramUrl . 'file/bot' . $this->token . '/' . $response['result']['file_path'] :
+            ' ';
     }
 }
