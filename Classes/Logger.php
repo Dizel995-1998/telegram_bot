@@ -2,17 +2,23 @@
 
 namespace Logger;
 
+use const Settings\LOGGER_FILE;
+
 class Logger
 {
-    private static function getFile()
+    protected static $file = null;
+
+    protected static function getLoggerResource()
     {
-        return $file = fopen('logger.txt', 'a+');
+        if (self::$file == null) {
+            self::$file = fopen(LOGGER_FILE, 'a+');
+        }
+        return self::$file;
     }
 
     public static function writeLine($line)
     {
-        $time = date("d/m/Y H:i:s");
-        $file = fopen('logger.txt', 'a+');
-        fwrite($file, '[' . $time . ']' . $line . PHP_EOL);
+        $line = '[' . date("d/m/Y H:i:s") . ']' . $line;
+        fwrite(self::getLoggerResource(), $line);
     }
 }

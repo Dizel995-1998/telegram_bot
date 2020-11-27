@@ -1,34 +1,191 @@
-[25/11/2020 16:04:13]audio
-[25/11/2020 16:04:13]Тип файла: audio
-[25/11/2020 16:04:13][ERROR] 400
-[25/11/2020 16:04:13][ERROR] Bad Request: there is no audio in the request
-[25/11/2020 16:07:55]document
-[25/11/2020 16:07:55]Тип файла: document
-[25/11/2020 16:07:55][ERROR] 400
-[25/11/2020 16:07:55][ERROR] Bad Request: there is no document in the request
-[25/11/2020 16:09:12]document
-[25/11/2020 16:09:12]Тип файла: document
-[25/11/2020 16:09:13][ERROR] 400
-[25/11/2020 16:09:13][ERROR] Bad Request: there is no document in the request
-[25/11/2020 16:10:00]message
-[25/11/2020 16:10:00]Тип файла: message
-[25/11/2020 16:10:21]message
-[25/11/2020 16:10:25]document
-[25/11/2020 16:10:25][ERROR] 400
-[25/11/2020 16:10:25][ERROR] Bad Request: there is no document in the request
-[25/11/2020 16:12:37]document
-[25/11/2020 16:12:37][ERROR] 400
-[25/11/2020 16:12:37][ERROR] Bad Request: there is no document in the request
-[25/11/2020 16:25:19]message
-[25/11/2020 16:25:33]document
-[25/11/2020 16:25:33][ERROR] 400
-[25/11/2020 16:25:33][ERROR] Bad Request: there is no document in the request
-[25/11/2020 16:28:06]document
-[25/11/2020 16:28:06][ERROR] Текст из сообщения: привет мри
-[25/11/2020 16:28:06][ERROR] 400
-[25/11/2020 16:28:06][ERROR] Bad Request: there is no document in the request
-[25/11/2020 16:32:09]document
-[25/11/2020 16:32:09]URL: https://api.telegram.org/bot1104270168:AAF_MG47TJ5HI5d_t7DK92wejR0Mvy_gBZk/sendDocument?chat_id=691046923&text=ааа
-[25/11/2020 16:32:10][ERROR] Текст из сообщения: ааа
-[25/11/2020 16:32:10][ERROR] 400
-[25/11/2020 16:32:10][ERROR] Bad Request: there is no document in the request
+[27/11/2020 17:10:25]array(2) {
+  ["update_id"]=>
+  int(578854121)
+  ["message"]=>
+  array(7) {
+    ["message_id"]=>
+    int(1257)
+    ["from"]=>
+    array(5) {
+      ["id"]=>
+      int(691046923)
+      ["is_bot"]=>
+      bool(false)
+      ["first_name"]=>
+      string(5) "Dizel"
+      ["last_name"]=>
+      string(8) "Dizel995"
+      ["language_code"]=>
+      string(2) "ru"
+    }
+    ["chat"]=>
+    array(3) {
+      ["id"]=>
+      float(-1001484960835)
+      ["title"]=>
+      string(61) "группа для обычных пользователей"
+      ["type"]=>
+      string(10) "supergroup"
+    }
+    ["date"]=>
+    int(1606482624)
+    ["photo"]=>
+    array(3) {
+      [0]=>
+      array(5) {
+        ["file_id"]=>
+        string(104) "AgACAgIAAx0CWIK0QwACBOlfwPrAyyRXptdNS8s717eAHzw5JQAClLIxG-DQCEoq75T8I5c7EMRhUJguAAMBAAMCAANtAANZggMAAR4E"
+        ["file_unique_id"]=>
+        string(20) "AQADxGFQmC4AA1mCAwAB"
+        ["file_size"]=>
+        int(30018)
+        ["width"]=>
+        int(320)
+        ["height"]=>
+        int(256)
+      }
+      [1]=>
+      array(5) {
+        ["file_id"]=>
+        string(104) "AgACAgIAAx0CWIK0QwACBOlfwPrAyyRXptdNS8s717eAHzw5JQAClLIxG-DQCEoq75T8I5c7EMRhUJguAAMBAAMCAAN4AANaggMAAR4E"
+        ["file_unique_id"]=>
+        string(20) "AQADxGFQmC4AA1qCAwAB"
+        ["file_size"]=>
+        int(140758)
+        ["width"]=>
+        int(800)
+        ["height"]=>
+        int(640)
+      }
+      [2]=>
+      array(5) {
+        ["file_id"]=>
+        string(104) "AgACAgIAAx0CWIK0QwACBOlfwPrAyyRXptdNS8s717eAHzw5JQAClLIxG-DQCEoq75T8I5c7EMRhUJguAAMBAAMCAAN5AANXggMAAR4E"
+        ["file_unique_id"]=>
+        string(20) "AQADxGFQmC4AA1eCAwAB"
+        ["file_size"]=>
+        int(147638)
+        ["width"]=>
+        int(880)
+        ["height"]=>
+        int(704)
+      }
+    }
+    ["caption"]=>
+    string(7) "#баг"
+    ["caption_entities"]=>
+    array(1) {
+      [0]=>
+      array(3) {
+        ["offset"]=>
+        int(0)
+        ["length"]=>
+        int(4)
+        ["type"]=>
+        string(7) "hashtag"
+      }
+    }
+  }
+}
+
+[27/11/2020 17:10:25]Баг №72
+Автор: Dizel
+Описание: 
+Файл оставленный пользователем: https://api.telegram.org/file/bot1104270168:AAF_MG47TJ5HI5d_t7DK92wejR0Mvy_gBZk/photos/file_22.jpg
+[27/11/2020 17:11:19]array(2) {
+  ["update_id"]=>
+  int(578854122)
+  ["message"]=>
+  array(5) {
+    ["message_id"]=>
+    int(1258)
+    ["from"]=>
+    array(4) {
+      ["id"]=>
+      int(477734064)
+      ["is_bot"]=>
+      bool(false)
+      ["first_name"]=>
+      string(12) "💪🏻🙂"
+      ["username"]=>
+      string(9) "kemran001"
+    }
+    ["chat"]=>
+    array(3) {
+      ["id"]=>
+      float(-1001484960835)
+      ["title"]=>
+      string(61) "группа для обычных пользователей"
+      ["type"]=>
+      string(10) "supergroup"
+    }
+    ["date"]=>
+    int(1606482679)
+    ["photo"]=>
+    array(3) {
+      [0]=>
+      array(5) {
+        ["file_id"]=>
+        string(104) "AgACAgIAAx0CWIK0QwACBOpfwPr3D25sza5VuMtCETk2qqXMHAACo7IxG-DQCEq4Ij4O3aTsOV5-15YuAAMBAAMCAANtAAOAQgQAAR4E"
+        ["file_unique_id"]=>
+        string(20) "AQADXn7Xli4AA4BCBAAB"
+        ["file_size"]=>
+        int(20461)
+        ["width"]=>
+        int(286)
+        ["height"]=>
+        int(320)
+      }
+      [1]=>
+      array(5) {
+        ["file_id"]=>
+        string(104) "AgACAgIAAx0CWIK0QwACBOpfwPr3D25sza5VuMtCETk2qqXMHAACo7IxG-DQCEq4Ij4O3aTsOV5-15YuAAMBAAMCAAN4AAOCQgQAAR4E"
+        ["file_unique_id"]=>
+        string(20) "AQADXn7Xli4AA4JCBAAB"
+        ["file_size"]=>
+        int(69294)
+        ["width"]=>
+        int(715)
+        ["height"]=>
+        int(800)
+      }
+      [2]=>
+      array(5) {
+        ["file_id"]=>
+        string(104) "AgACAgIAAx0CWIK0QwACBOpfwPr3D25sza5VuMtCETk2qqXMHAACo7IxG-DQCEq4Ij4O3aTsOV5-15YuAAMBAAMCAAN5AAOBQgQAAR4E"
+        ["file_unique_id"]=>
+        string(20) "AQADXn7Xli4AA4FCBAAB"
+        ["file_size"]=>
+        int(137839)
+        ["width"]=>
+        int(1073)
+        ["height"]=>
+        int(1201)
+      }
+    }
+  }
+}
+
+[27/11/2020 17:14:22]Array
+[27/11/2020 17:14:22]Баг №73
+Автор: Dizel
+Описание: 
+Файл оставленный пользователем: https://api.telegram.org/file/bot1104270168:AAF_MG47TJ5HI5d_t7DK92wejR0Mvy_gBZk/photos/file_22.jpg
+[27/11/2020 17:16:08]Array
+[27/11/2020 17:17:43]array(5) {
+  ["file_id"]=>
+  string(104) "AgACAgIAAx0CWIK0QwACBO1fwPx3IL-Cx-_9c-ntsaWUHtY9PAAClLIxG-DQCEoq75T8I5c7EMRhUJguAAMBAAMCAANtAANZggMAAR4E"
+  ["file_unique_id"]=>
+  string(20) "AQADxGFQmC4AA1mCAwAB"
+  ["file_size"]=>
+  int(30018)
+  ["width"]=>
+  int(320)
+  ["height"]=>
+  int(256)
+}
+
+[27/11/2020 17:21:04]-1
+[27/11/2020 17:23:07]макс.индекс массива3
+[27/11/2020 17:23:46]-1
+[27/11/2020 17:25:51]2

@@ -67,7 +67,8 @@ class TelegramBot
             }
 
             if ($this->messageType == "photo") {
-                $this->fileId = $incomingData["message"]["photo"][0]["file_id"];
+                $maxQualityPhotoIndex = count($incomingData["message"]["photo"])-1;
+                $this->fileId = $incomingData["message"]["photo"][$maxQualityPhotoIndex]["file_id"];
             } else {
                 $this->fileId = $incomingData["message"][$this->messageType]["file_id"];
             }
@@ -120,10 +121,7 @@ class TelegramBot
         $url = $this->telegramUrl . 'bot' . $this->token . '/send' . ucfirst($messageType) . '?chat_id=' . $chatID;
         $url .= ($messageType == 'message') ? '&text=' . $messageText : '&caption=' . $messageText;
 
-        Logger::writeLine("URL: " . $url);
-
         if ($messageType != 'message' && isset($fileID)) {
-            Logger::writeLine("Отправка какого то файла");
             $this->curl->setHeaders(['Content-Type: multipart/form-data']);
             $this->curl->withBody([$messageType => $fileID]);
         }
@@ -131,7 +129,7 @@ class TelegramBot
 
         $arResponse = json_decode($this->curl->getResponse(), JSON_UNESCAPED_UNICODE);
         $this->errorDescription = isset($arResponse['description']) ? $arResponse['description'] : " ";
-        $this->errorCode = isset($arResponse['error_code']) ? $arResponse['error_code'] : " ";
+        $this->errorCode = isset($arResponse['error_code']) ? $arResponse['error_code'] : 0;
         return isset($arResponse['ok']) ? $arResponse['ok'] : false;
     }
 
@@ -254,7 +252,6 @@ class TelegramBot
         $this->curl->sendRequest($url);
         $response = json_decode($this->curl->getResponse(), true);
         return ($response['ok'] == true) ?
-            $this->telegramUrl . 'file/bot' . $this->token . '/' . $response['result']['file_path'] :
-            ' ';
+            $this->telegramUrl . 'file/bot' . $this->token . '/' . $response['result']['file_path'] : " ";
     }
 }

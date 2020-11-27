@@ -1,6 +1,6 @@
 <?php
 
-namespace Trello;
+namespace Trello\Actions;
 
 use Curl\Curl;
 

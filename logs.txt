@@ -1,0 +1,88 @@
+[27-Nov-2020 17:57:59 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 17:58:04 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 17:58:15 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 17:58:20 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 17:58:47 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 17:58:52 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 17:59:47 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 17:59:52 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 18:00:47 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 18:00:52 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 18:01:47 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 18:01:52 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 18:02:47 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 18:02:52 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 18:03:47 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 18:03:52 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 18:04:47 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 18:04:52 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:16
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 16
+[27-Nov-2020 18:05:48 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:17
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 17
+[27-Nov-2020 18:05:52 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:17
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 17
+[27-Nov-2020 18:06:48 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:17
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 17
+[27-Nov-2020 18:06:52 Asia/Dubai] PHP Fatal error:  Uncaught Error: Undefined constant 'Settings\TELEGRAM_BOT_TOKEN' in /var/www/site1/eventHandler.php:17
+Stack trace:
+#0 {main}
+  thrown in /var/www/site1/eventHandler.php on line 17

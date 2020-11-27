@@ -7,8 +7,10 @@ $baseDir = dirname($vendorDir);
 
 return array(
     '\\' => array($baseDir . '/'),
+    'Trello\\Actions\\' => array($baseDir . '/Classes/Trello/Actions'),
     'Trello\\' => array($baseDir . '/Classes/Trello'),
     'TelegramBot\\' => array($baseDir . '/Classes'),
+    'Settings\\' => array($baseDir . '/config'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Psr\\Http\\Client\\' => array($vendorDir . '/psr/http-client/src'),
     'Logger\\' => array($baseDir . '/Classes'),

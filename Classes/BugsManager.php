@@ -2,11 +2,30 @@
 
 namespace BugsManager;
 
+use const Settings\DB_DBNAME;
+use const Settings\DB_HOST;
+use const Settings\DB_PASSWORD;
+use const Settings\DB_USER;
+
 class BugsManager
 {
+    protected static function createPDOConnect($host, $db, $user, $password)
+    {
+        return new \PDO('mysql:host=' . $host . ';charset=UTF8;dbname=' . $db, $user, $password);
+    }
+
+    private static function getPDOConnection()
+    {
+        static $connect = null;
+        if ($connect === null) {
+            $connect = self::createPDOConnect(DB_HOST, DB_DBNAME, DB_USER, DB_PASSWORD);
+        }
+        return $connect;
+    }
+
     private static function getDbConnection()
     {
-        return getPDOConnection();
+        return self::getPDOConnection();
     }
 
     public static function getCountBugT(bool $countFix = false) : int

@@ -1,34 +1,22 @@
 <?php
 
 require_once 'vendor/autoload.php';
-require_once 'settings.php';
 
 use Curl\Curl;
 use BugsManager\BugsManager;
 use Logger\Logger;
 use TelegramBot\TelegramBot;
 
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
+use const Settings\TELEGRAM_BOT_TOKEN;
+use const Settings\TELEGRAM_COMMON_GROUP_CHAT_ID;
+use const Settings\TELEGRAM_TEST_GROUP_CHAT_ID;
 
 ini_set('log_errors', 'On');
 ini_set('error_log', 'logs.txt');
 
-$telegramBot = new TelegramBot(TOKEN, file_get_contents('php://input'), new Curl());
+$telegramBot = new TelegramBot(TELEGRAM_BOT_TOKEN, file_get_contents('php://input'), new Curl());
 
 $currentChatID = $telegramBot->getChatId();
-
-if ($telegramBot->getMessageType() != "message") {
-    $message = $telegramBot->getReferenceByFileID($telegramBot->getFileId());
-    $telegramBot->sendMessage($currentChatID, "message", $message);
-}
-
-if ($telegramBot->replyMessage() && $telegramBot->messageHas('~^#fixed~') && strcmp($currentChatID, TEST_GROUP_CHAT_ID) === 0) {
-    $message = $telegramBot->getReplyOriginText();
-    $telegramBot->sendMessage(COMMON_GROUP_CHAT_ID, 'message', '-- Данный баг был исправлен --');
-    $telegramBot->sendMessage(COMMON_GROUP_CHAT_ID, 'message', $message);
-}
 
 if ($telegramBot->messageHas('~^/help~')) {
     $telegramBot->sendMessage($currentChatID, 'message',
@@ -101,15 +89,29 @@ if ($telegramBot->messageHas('~^/getChatID~')) {
     $telegramBot->sendMessage($currentChatID, 'message', 'ChatID: ' . $telegramBot->getChatId());
 }
 
-if ($telegramBot->messageHas('~^#баг~') && strcmp($currentChatID, COMMON_GROUP_CHAT_ID) === 0) {
+if ($telegramBot->messageHas('~^#баг~') && strcmp($currentChatID, TELEGRAM_COMMON_GROUP_CHAT_ID) === 0) {
     $message = str_replace('#баг', '', $telegramBot->getTextFromMessage());
 
     $message_for_testers = BugsManager::addNewBug($message) ?
         'Баг №' . BugsManager::getCountBug() . PHP_EOL .
         'Автор: ' . $telegramBot->getUserName() . PHP_EOL .
-        'Описание: ' . $message
+        'Описание: ' . $message . PHP_EOL
         :
         '[ERROR] Свяжитесь с разработчиками, не удалось записать баг в БД';
 
+    $message_for_trello = $message_for_testers;
+    if ($telegramBot->getMessageType() != 'message') {
+        $message_for_trello .= 'Файл оставленный пользователем: ' . $telegramBot->getReferenceByFileID($telegramBot->getFileId());
+    }
+
+    $trelloCard = new \Trello\TrelloCard();
+    $trelloCard->createCard('5fbe644ac20bdb66691ce589', 'Баг №' . BugsManager::getCountBug(), $message_for_trello);
+
     $telegramBot->sendMessage(TEST_GROUP_CHAT_ID, $telegramBot->getMessageType(), $message_for_testers, $telegramBot->getFileId());
+}
+
+if ($telegramBot->replyMessage() && $telegramBot->messageHas('~^#fixed~') && strcmp($currentChatID, TELEGRAM_TEST_GROUP_CHAT_ID) === 0) {
+    $message = $telegramBot->getReplyOriginText();
+    $telegramBot->sendMessage(TELEGRAM_COMMON_GROUP_CHAT_ID, 'message', '-- Данный баг был исправлен --');
+    $telegramBot->sendMessage(TELEGRAM_COMMON_GROUP_CHAT_ID, 'message', $message);
 }

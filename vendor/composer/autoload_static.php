@@ -20,8 +20,13 @@ class ComposerStaticInit4cbd862ee94adc0c9751bba458336316
         ),
         'T' => 
         array (
+            'Trello\\Actions\\' => 15,
             'Trello\\' => 7,
             'TelegramBot\\' => 12,
+        ),
+        'S' => 
+        array (
+            'Settings\\' => 9,
         ),
         'P' => 
         array (
@@ -53,6 +58,10 @@ class ComposerStaticInit4cbd862ee94adc0c9751bba458336316
         array (
             0 => __DIR__ . '/../..' . '/',
         ),
+        'Trello\\Actions\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Classes/Trello/Actions',
+        ),
         'Trello\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Classes/Trello',
@@ -60,6 +69,10 @@ class ComposerStaticInit4cbd862ee94adc0c9751bba458336316
         'TelegramBot\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Classes',
+        ),
+        'Settings\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/config',
         ),
         'Psr\\Http\\Message\\' => 
         array (
