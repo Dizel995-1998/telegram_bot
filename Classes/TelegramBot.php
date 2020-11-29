@@ -29,6 +29,8 @@ class TelegramBot
         $this->token = $token;
         $this->curl = $curl;
 
+        Logger::writeLine($incomingData);
+
         $incomingData = json_decode($incomingData, JSON_UNESCAPED_UNICODE);
         /* Получение данных из телеграмм сообщения */
         if (!empty($incomingData)) {
@@ -36,27 +38,19 @@ class TelegramBot
                 $incomingData['message']['from']['first_name'] : ' ';
             $this->chatId = isset($incomingData['message']['chat']['id']) ?
                 $incomingData['message']['chat']['id'] : ' ';
-
-            if (isset($incomingData['message']['text'])) {
-                $this->textMessage = $incomingData['message']['text'];
-            } else {
-                $this->textMessage = " ";
-            }
-
-            if (isset($incomingData['message']['caption'])) {
-                $this->textMessage = $incomingData['message']['caption'];
-            }
-
+            $this->textMessage = isset($incomingData['message']['text']) ?
+                $incomingData['message']['text'] : "";
+            $this->textMessage = isset($incomingData['message']['caption']) ?
+                $incomingData['message']['caption'] : $this->textMessage;
             $this->messageID = isset($incomingData['message']['message_id']) ?
                 $incomingData['message']['message_id'] : ' ';
-
             $this->replyMessageFlag = isset($incomingData['message']['reply_to_message']);
-
             if ($this->replyMessageFlag) {
                 $this->replyMessageID = isset($incomingData['message']['reply_to_message']['message_id']) ?
                     $incomingData['message']['reply_to_message']['message_id'] : 0;
                 $this->replyMessageText = isset($incomingData['message']['reply_to_message']['text']) ?
-                    $incomingData['message']['reply_to_message']['text'] : " ";
+                    $incomingData['message']['reply_to_message']['text'] :
+                    $incomingData['message']['reply_to_message']['caption'];
             }
 
             foreach ($this->allowFileType as $type) {
@@ -155,19 +149,6 @@ class TelegramBot
     }
 
     /**
-     * @deprecated
-     * @param $chatId
-     * @param $message
-     * @throws Exception
-     */
-    public function sendMessageD($chatId, $message)
-    {
-        $this->curl->sendRequest(
-            $this->telegramUrl . '/sendMessage?chat_id=' . $chatId . '&text=' . $message
-        );
-    }
-
-    /**
      * @description Устанавливает URL на который будет возвращаться webhook
      * @param $webHookURL
      * @throws Exception
@@ -253,5 +234,23 @@ class TelegramBot
         $response = json_decode($this->curl->getResponse(), true);
         return ($response['ok'] == true) ?
             $this->telegramUrl . 'file/bot' . $this->token . '/' . $response['result']['file_path'] : " ";
+    }
+
+    /**
+     * @description Отвечает на сообщение replyToMessageID текстом answerText в чате chatID,
+     * возвращает статус успешности произведённой операции
+     * @param string $chatID
+     * @param string $answerText
+     * @param string $replyToMessageID
+     * @return bool
+     * @throws Exception
+     */
+    public function answerOnMessageID(string $chatID, string $answerText, string $replyToMessageID) : bool
+    {
+        $url =
+            $this->telegramUrl . 'bot' . $this->token . '/sendMessage?chat_id=' . $chatID .
+            '&text=' . $answerText . '&reply_to_message_id=' . $replyToMessageID;
+        $this->curl->sendRequest($url);
+        return $this->curl->getResponseCode() == 200;
     }
 }

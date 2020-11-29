@@ -1,8 +1,7 @@
 <?php
 
 namespace Logger;
-
-use const Settings\LOGGER_FILE;
+//require_once 'config/settings.php';
 
 class Logger
 {

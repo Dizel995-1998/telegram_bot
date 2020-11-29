@@ -1,6 +1,7 @@
 <?php
 
 namespace Trello;
+use Trello\Actions\Actions;
 
 class TrelloList
 {

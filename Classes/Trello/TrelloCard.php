@@ -1,27 +1,28 @@
 <?php
 
 namespace Trello;
+use Trello\Actions\Actions;
 
 class TrelloCard
 {
     CONST ACTION = 'cards';
 
-    public function getCard(string $cardID)
+    public function getCard(string $cardID) : ?array
     {
         $result = Actions::get('cards', $cardID);
-        return $result != 'card not found' ? $result : " ";
+        return $result != 'card not found' ? $result : null;
     }
 
-    public function getName(string $cardID)
+    public function getName(string $cardID) : ?string
     {
         $result = Actions::get(self::ACTION, $cardID);
-        return isset($result['name']) ? $result['name'] : false;
+        return isset($result['name']) ? $result['name'] : null;
     }
 
-    public function getDescription(string $cardID)
+    public function getDescription(string $cardID) : ?string
     {
         $result = Actions::get(self::ACTION, $cardID);
-        return isset($result['desc']) ? $result['desc'] : false;
+        return $result['desc'] ?? null;
     }
 
     public function updateCard(string $cardID, ?array $fields)

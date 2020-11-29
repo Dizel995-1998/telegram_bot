@@ -7,10 +7,6 @@ use BugsManager\BugsManager;
 use Logger\Logger;
 use TelegramBot\TelegramBot;
 
-use const Settings\TELEGRAM_BOT_TOKEN;
-use const Settings\TELEGRAM_COMMON_GROUP_CHAT_ID;
-use const Settings\TELEGRAM_TEST_GROUP_CHAT_ID;
-
 ini_set('log_errors', 'On');
 ini_set('error_log', 'logs.txt');
 
@@ -18,26 +14,18 @@ $telegramBot = new TelegramBot(TELEGRAM_BOT_TOKEN, file_get_contents('php://inpu
 
 $currentChatID = $telegramBot->getChatId();
 
+if ($telegramBot->replyMessage() && $telegramBot->messageHas('~^#fixed~') && strcmp($currentChatID, TELEGRAM_TEST_GROUP_CHAT_ID) === 0) {
+    $message = $telegramBot->getReplyOriginText();
+    $telegramBot->sendMessage(TELEGRAM_COMMON_GROUP_CHAT_ID, 'message', '-- Данный баг был исправлен --');
+    $telegramBot->sendMessage(TELEGRAM_COMMON_GROUP_CHAT_ID, 'message', $message);
+}
+
 if ($telegramBot->messageHas('~^/help~')) {
-    $telegramBot->sendMessage($currentChatID, 'message',
-        '/getInstructions - получить инструкцию по использованию бота' . PHP_EOL .
-        '/getChatID - вывести ID чата' . PHP_EOL .
-        '#fixed - при ответе на сообщение с багом, отмечает баг как исправленный' . PHP_EOL .
-        '/showCountAllBugs - счётчик общего количества багов' . PHP_EOL .
-        '/showCountFixBugs - количество исправленных багов' . PHP_EOL .
-        '/fixBug [id] - отметить баг с ID как исправленный' . PHP_EOL .
-        '/getBug [id] - получить описание бага с ID' . PHP_EOL .
-        '/getBugs [flag] - если flag = 1, возвращает список исправленных багов, иначе не исправленных' . PHP_EOL
-    );
+    $telegramBot->sendMessage($currentChatID, 'message', TELEGRAM_COMMANDS_LIST);
 }
 
 if ($telegramBot->messageHas('~^/getInstructions~')) {
-    $message =
-        'Есть два чата, для обычных пользователей и тестировщиков, все сообщения отмеченные
-        в чате пользователей с хештэгом #баг будут отправлены к тестировщикам для последующей
-        диагностики бага. Когда баг будет исправлен, нужно ответить на сообщение бота с описанием бага
-        сообщением с хэштегом #fixed, сообщение будет передано пользователям с пометкой - исправленно';
-    $message = preg_replace('/\s+/', ' ', $message);
+    $message = preg_replace('/\s+/', ' ', DESCRIPTION_HOW_WORK_BOT);
     $telegramBot->sendMessage($currentChatID, 'message', $message);
 }
 
@@ -107,11 +95,5 @@ if ($telegramBot->messageHas('~^#баг~') && strcmp($currentChatID, TELEGRAM_CO
     $trelloCard = new \Trello\TrelloCard();
     $trelloCard->createCard('5fbe644ac20bdb66691ce589', 'Баг №' . BugsManager::getCountBug(), $message_for_trello);
 
-    $telegramBot->sendMessage(TEST_GROUP_CHAT_ID, $telegramBot->getMessageType(), $message_for_testers, $telegramBot->getFileId());
-}
-
-if ($telegramBot->replyMessage() && $telegramBot->messageHas('~^#fixed~') && strcmp($currentChatID, TELEGRAM_TEST_GROUP_CHAT_ID) === 0) {
-    $message = $telegramBot->getReplyOriginText();
-    $telegramBot->sendMessage(TELEGRAM_COMMON_GROUP_CHAT_ID, 'message', '-- Данный баг был исправлен --');
-    $telegramBot->sendMessage(TELEGRAM_COMMON_GROUP_CHAT_ID, 'message', $message);
+    $telegramBot->sendMessage(TELEGRAM_TEST_GROUP_CHAT_ID, $telegramBot->getMessageType(), $message_for_testers, $telegramBot->getFileId());
 }

@@ -23,12 +23,12 @@ class Actions implements ActionInterface
 
     protected static function getToken() : string
     {
-        return 'af6ee7700002364f55f5224edaba230109d366cf22ef74e6c01621491d7b6953';
+        return TRELLO_TOKEN;
     }
 
     protected static function getKey() : string
     {
-        return '010ef0062b53ab1e9b7ac112dca9f805';
+        return TRELLO_KEY;
     }
 
     protected static function prepareUrl(string $action, ?string $id, ?array $fields) : string

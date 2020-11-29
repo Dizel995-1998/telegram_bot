@@ -2,10 +2,7 @@
 
 namespace BugsManager;
 
-use const Settings\DB_DBNAME;
-use const Settings\DB_HOST;
-use const Settings\DB_PASSWORD;
-use const Settings\DB_USER;
+//require_once 'config/settings.php';
 
 class BugsManager
 {

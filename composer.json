@@ -15,7 +15,6 @@
             "Logger\\" : "Classes/",
             "Trello\\" : "Classes/Trello",
             "Trello\\Actions\\" : "Classes/Trello/Actions",
-            "Settings\\" : "config/",
             "\\" : ""
         }
     }

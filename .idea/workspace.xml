@@ -18,6 +18,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/composer" />
@@ -43,18 +46,19 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Documents/05.ru.bitrix.docker" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.web.browsers" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\OpenServer\domains\remote_server\config" />
+      <recent name="C:\OpenServer\domains\remote_server\Classes\Trello\Actions" />
       <recent name="C:\OpenServer\domains\remote_server\Classes\Trello" />
       <recent name="C:\OpenServer\domains\remote_server\Interfaces" />
       <recent name="C:\OpenServer\domains\remote_server\Classes" />
-      <recent name="C:\OpenServer\domains\remote_server" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -89,7 +93,7 @@
       <workItem from="1606206107076" duration="26778000" />
       <workItem from="1606291438559" duration="18871000" />
       <workItem from="1606380020040" duration="26519000" />
-      <workItem from="1606464505322" duration="1221000" />
+      <workItem from="1606464505322" duration="21845000" />
     </task>
     <servers />
   </component>
@@ -113,18 +117,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="473" y="195" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1605601924118" />
-    <state x="527" y="22" key="#com.intellij.ide.util.MemberChooser" timestamp="1606404020734">
+    <state x="527" y="22" key="#com.intellij.ide.util.MemberChooser" timestamp="1606469554098">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="527" y="22" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1606404020734" />
-    <state x="152" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606393576836">
+    <state x="527" y="22" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1606469554098" />
+    <state x="152" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606471179883">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="152" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1606393576836" />
-    <state x="433" y="108" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606404408758">
+    <state x="152" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1606471179883" />
+    <state x="433" y="108" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606484743407">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="433" y="108" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1606404408758" />
+    <state x="433" y="108" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1606484743407" />
     <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1605530253241">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -141,10 +145,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="147" y="65" key="MergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1605712449747" />
-    <state x="762" y="162" key="NewPhpClassDialog" timestamp="1606404385568">
+    <state x="762" y="162" key="NewPhpClassDialog" timestamp="1606478990575">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="762" y="162" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1606404385568" />
+    <state x="762" y="162" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1606478990575" />
     <state x="578" y="319" key="NewPhpFileDialog" timestamp="1606134289602">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -153,18 +157,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="237" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1606224817055" />
-    <state x="411" y="80" width="714" height="664" key="find.popup" timestamp="1606229203546">
+    <state x="411" y="80" width="714" height="664" key="find.popup" timestamp="1606482952084">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="411" y="80" width="714" height="664" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1606229203546" />
+    <state x="411" y="80" width="714" height="664" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1606482952084" />
     <state x="584" y="84" width="466" height="666" key="ftp.server.browser" timestamp="1605529702446">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="584" y="84" width="466" height="666" key="ftp.server.browser/0.0.1536.824@0.0.1536.824" timestamp="1605529702446" />
-    <state x="341" y="183" width="840" height="1034" key="run.anything.popup" timestamp="1606404536805">
+    <state x="474" y="143" key="refactoring.ChangeSignatureDialog" timestamp="1606476972067">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="341" y="183" width="840" height="1034" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1606404536805" />
+    <state x="474" y="143" key="refactoring.ChangeSignatureDialog/0.0.1536.824@0.0.1536.824" timestamp="1606476972067" />
+    <state x="341" y="183" width="840" height="1034" key="run.anything.popup" timestamp="1606476058904">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="341" y="183" width="840" height="1034" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1606476058904" />
     <state x="347" y="0" width="840" height="1034" key="search.everywhere.popup" timestamp="1606405592054">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
