@@ -24,10 +24,6 @@ class ComposerStaticInit4cbd862ee94adc0c9751bba458336316
             'Trello\\' => 7,
             'TelegramBot\\' => 12,
         ),
-        'S' => 
-        array (
-            'Settings\\' => 9,
-        ),
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
@@ -42,6 +38,10 @@ class ComposerStaticInit4cbd862ee94adc0c9751bba458336316
             'GuzzleHttp\\Psr7\\' => 16,
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
+        ),
+        'F' => 
+        array (
+            'FileManager\\' => 12,
         ),
         'C' => 
         array (
@@ -70,10 +70,6 @@ class ComposerStaticInit4cbd862ee94adc0c9751bba458336316
         array (
             0 => __DIR__ . '/../..' . '/Classes',
         ),
-        'Settings\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/config',
-        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
@@ -97,6 +93,10 @@ class ComposerStaticInit4cbd862ee94adc0c9751bba458336316
         'GuzzleHttp\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
+        ),
+        'FileManager\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/Classes',
         ),
         'Curl\\' => 
         array (

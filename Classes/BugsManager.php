@@ -1,74 +1,133 @@
 <?php
 
 namespace BugsManager;
-
-//require_once 'config/settings.php';
+use Logger\Logger;
+require_once 'config/settings.php';
 
 class BugsManager
 {
-    protected static function createPDOConnect($host, $db, $user, $password)
-    {
-        return new \PDO('mysql:host=' . $host . ';charset=UTF8;dbname=' . $db, $user, $password);
-    }
+    protected static $pdo = null;
 
-    private static function getPDOConnection()
+    protected static function getPDOconnection()
     {
-        static $connect = null;
-        if ($connect === null) {
-            $connect = self::createPDOConnect(DB_HOST, DB_DBNAME, DB_USER, DB_PASSWORD);
+        if (self::$pdo == null) {
+            self::$pdo = new \PDO('mysql:host=' . 'localhost' . ';charset=UTF8;dbname=' . 'telegram_bot', 'root', 'root');
         }
-        return $connect;
+        return self::$pdo;
     }
 
-    private static function getDbConnection()
+    /**
+     * Создаёт обьект ( запись ) сущности bug
+     * @param string $bugDescription - описание бага
+     * @param string $bugAuthor - пользователь заметивший баг
+     * @param string $messageID
+     * @param string|null $messageGroupID
+     * @return bool - возвращает true, в случае успешной записи бага в БД
+     */
+    public static function addRowToBugs(string $bugDescription, string $bugAuthor, string $messageID, ?string $messageGroupID) : bool
     {
-        return self::getPDOConnection();
+        $query = 'INSERT INTO bugs (bug_description, bug_author, message_id, message_group_id)
+                  VALUES ( :bug_description, :bug_author, :message_id, :message_group_id)';
+        return (bool) self::getPDOconnection()
+            ->prepare($query)
+            ->execute([':bug_description' => $bugDescription, ':bug_author' => $bugAuthor,
+                       ':message_group_id' => $messageGroupID, ':message_id' => $messageID]);
     }
 
-    public static function getCountBugT(bool $countFix = false) : int
+    /**
+     * Отмечает баг с bugID как исправленный
+     * @param int $bugID - идентификатор бага который необходимо отметить как исправленный
+     * @return bool - возвращает true в случае успешного изменения статуса записи
+     */
+    public static function bugFix(int $bugID) : bool
     {
-        $data = ($countFix) ?
-            self::getDbConnection()->query("SELECT COUNT(*) FROM bugs_manager WHERE fix_flag is NOT NULL") :
-            self::getDbConnection()->query("SELECT COUNT(*) FROM bugs_manager");
-        return $data->fetchColumn();
+        return (bool) self::getPDOconnection()
+            ->prepare('UPDATE bugs SET bug_fix = 1 WHERE bug_id = :bug_id')
+            ->execute([':bug_id' => $bugID]);
     }
 
-    public static function getCountBug($all_or_fix = false) : int
+    /**
+     * Добавляет файл к описанию бага
+     * @param int $bugID - идентификатор бага к которому нужно добавить файл
+     * @param string $pathToFile - путь к файлу
+     * @param string $fileID
+     * @return bool - возвращает true в случае успешного добавления записи
+     */
+    public static function addFileToBug(int $bugID, string $pathToFile, string $fileID) : bool
     {
-        if (!$all_or_fix)
-            $data = self::getDbConnection()->query("SELECT COUNT(*) FROM bugs_manager");
-        else
-            $data = self::getDbConnection()->query("SELECT COUNT(*) FROM bugs_manager WHERE fix_flag is NOT NULL");
-
-        return ($data->fetchColumn());
+        return (bool) self::getPDOconnection()
+            ->prepare('INSERT INTO files ( bug_id, path_to_file, file_id ) VALUES (:bug_id, :path_to_file, :file_id)')
+            ->execute([':bug_id' => $bugID, ':path_to_file' => $pathToFile, ':file_id' => $fileID]);
     }
 
-    public static function addNewBug($description_bug)
+    /**
+     * Возвращает ид бага по messageGroupID
+     * @param string $messageGroupID - ид группы по которому нужно найти ид бага
+     * @return string
+     */
+    public static function getBugIDbyMessageGroupID(string $messageGroupID) : string
     {
-        $stmt = self::getDbConnection()->prepare("INSERT INTO bugs_manager ( description_bug ) VALUES ( :description_bug )");
-        return (bool) $stmt->execute([':description_bug' => $description_bug]);
+        $obResult = self::getPDOconnection()
+            ->prepare('SELECT bug_id FROM bugs WHERE message_group_id = :message_group_id');
+        $obResult->execute([':message_group_id' => $messageGroupID]);
+        return $obResult->fetch(\PDO::FETCH_COLUMN) ?? "";
     }
 
-    public static function fixBugID($bugID) : bool
+    /**
+     * Возвращает id последнего добавленного бага 
+     * @return int
+     */
+    public static function getLastBugID() : int
     {
-        $stmt = self::getDbConnection()->prepare("UPDATE bugs_manager SET fix_flag = 1 WHERE id = :id");
-        return (bool) $stmt->execute([':id' => $bugID]);
+        return self::getPDOconnection()
+            ->query('SELECT MAX(bug_id) FROM bugs')
+            ->fetchColumn();
     }
 
-    public static function getDescriptionByID($bugID)
+    /**
+     * Возвращает описание бага по его ID
+     * @param int $bugID
+     * @return string
+     */
+    public static function getDescriptionByBugID(int $bugID) : string
     {
-        $stmt = self::getDbConnection()->prepare("SELECT ( description_bug ) FROM bugs_manager WHERE id = :id");
-        $stmt->execute([':id' => $bugID]);
-        return $stmt->fetch(\PDO::FETCH_ASSOC);
+        $obResult = self::getPDOconnection()->prepare(
+            'SELECT bug_description FROM bugs WHERE bug_id = :bug_id');
+        $obResult->execute([':bug_id' => $bugID]);
+        return $obResult->fetchColumn();
     }
 
-    public static function getAllBugs($fixFlag = false)
+    /**
+     * Возвращает массив с строками путей к файлам бага
+     * @param int $bugID
+     * @return array
+     */
+    public static function getPathToFilesByBugID(int $bugID) : array
     {
-        if (!$fixFlag) // вернуть массив исправленных багов
-            $stmt = self::getDbConnection()->query("SELECT id, description_bug FROM bugs_manager WHERE fix_flag is NULL");
-        else
-            $stmt = self::getDbConnection()->query("SELECT id, description_bug FROM bugs_manager WHERE fix_flag is NOT NULL");
+        $obResult = self::getPDOconnection()->prepare(
+            'SELECT path_to_file FROM bugs JOIN files ON bugs.bug_id = files.bug_id WHERE bugs.bug_id = :bug_id');
+        $obResult->execute([':bug_id' => $bugID]);
+        return $obResult->fetchAll(\PDO::FETCH_COLUMN);
+    }
 
-        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    public static function getFilesIDbyBugID(int $bugID)
+    {
+        $obResult = self::getPDOconnection()->prepare(
+            'SELECT file_id FROM files WHERE bug_id = :bug_id');
+        $obResult->execute([':bug_id' => $bugID]);
+        return $obResult->fetchAll(\PDO::FETCH_COLUMN);
+    }
+
+    public static function getAllInformationAboutBug(int $bugID)
+    {
+        $obResult = self::getPDOconnection()->prepare(
+            'SELECT bug_description, bug_author, bug_fix, message_group_id, message_id FROM bugs WHERE bug_id = :bug_id');
+        $obResult->execute([':bug_id' => $bugID]);
+        $result = $obResult->fetch(\PDO::FETCH_ASSOC);
+        if (is_bool($result)) {
+            return [];
+        } else {
+            return $result;
+        }
     }
 }

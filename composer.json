@@ -5,7 +5,9 @@
         "ext-fileinfo": "*",
         "ext-json": "*",
       "ext-pdo": "*",
-        "guzzlehttp/guzzle": "^7.2"
+        "guzzlehttp/guzzle": "^7.2",
+        "ext-iconv": "*",
+        "ext-mbstring": "*"
     },
     "autoload": {
         "psr-4": {
@@ -13,8 +15,9 @@
             "Curl\\" : "Classes/",
             "BugsManager\\" : "Classes/",
             "Logger\\" : "Classes/",
-            "Trello\\" : "Classes/Trello",
-            "Trello\\Actions\\" : "Classes/Trello/Actions",
+            "Trello\\" : "Classes/Trello/",
+            "Trello\\Actions\\" : "Classes/Trello/Actions/",
+            "FileManager\\" : "Classes/",
             "\\" : ""
         }
     }

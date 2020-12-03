@@ -1,50 +1,124 @@
-[29-Nov-2020 15:07:13 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:07:13 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:07:22 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:07:22 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:07:43 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:07:43 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:07:44 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:07:44 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:07:45 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:07:45 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:08:01 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:08:01 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:08:04 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:08:04 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:08:06 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:08:06 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:08:09 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:08:09 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:08:36 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:08:36 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:09:12 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:09:12 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:12:57 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:12:57 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:12:59 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:12:59 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:13:01 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:13:01 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:13:14 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:13:14 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:15:05 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:15:05 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:15:08 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:15:08 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:15:17 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:15:17 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:15:24 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:15:24 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:15:40 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:15:40 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:15:52 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:15:52 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:16:03 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:16:03 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:16:18 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:16:18 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:17:23 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:17:23 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:17:27 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
-[29-Nov-2020 15:17:27 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 67
+[03-Dec-2020 17:43:28 Asia/Dubai] PHP Notice:  Undefined variable: lastBugID in /var/www/test.linux-electronics/eventHandler.php on line 53
+[03-Dec-2020 17:43:28 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to BugsManager\BugsManager::addFileToBug() must be of the type int, null given, called in /var/www/test.linux-electronics/eventHandler.php on line 53 and defined in /var/www/test.linux-electronics/Classes/BugsManager.php:56
+Stack trace:
+#0 /var/www/test.linux-electronics/eventHandler.php(53): BugsManager\BugsManager::addFileToBug()
+#1 {main}
+  thrown in /var/www/test.linux-electronics/Classes/BugsManager.php on line 56
+[03-Dec-2020 17:43:31 Asia/Dubai] PHP Notice:  Undefined variable: lastBugID in /var/www/test.linux-electronics/eventHandler.php on line 53
+[03-Dec-2020 17:43:31 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to BugsManager\BugsManager::addFileToBug() must be of the type int, null given, called in /var/www/test.linux-electronics/eventHandler.php on line 53 and defined in /var/www/test.linux-electronics/Classes/BugsManager.php:56
+Stack trace:
+#0 /var/www/test.linux-electronics/eventHandler.php(53): BugsManager\BugsManager::addFileToBug()
+#1 {main}
+  thrown in /var/www/test.linux-electronics/Classes/BugsManager.php on line 56
+[03-Dec-2020 17:43:36 Asia/Dubai] PHP Notice:  Undefined variable: lastBugID in /var/www/test.linux-electronics/eventHandler.php on line 53
+[03-Dec-2020 17:43:36 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to BugsManager\BugsManager::addFileToBug() must be of the type int, null given, called in /var/www/test.linux-electronics/eventHandler.php on line 53 and defined in /var/www/test.linux-electronics/Classes/BugsManager.php:56
+Stack trace:
+#0 /var/www/test.linux-electronics/eventHandler.php(53): BugsManager\BugsManager::addFileToBug()
+#1 {main}
+  thrown in /var/www/test.linux-electronics/Classes/BugsManager.php on line 56
+[03-Dec-2020 17:43:45 Asia/Dubai] PHP Notice:  Undefined variable: lastBugID in /var/www/test.linux-electronics/eventHandler.php on line 53
+[03-Dec-2020 17:43:45 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to BugsManager\BugsManager::addFileToBug() must be of the type int, null given, called in /var/www/test.linux-electronics/eventHandler.php on line 53 and defined in /var/www/test.linux-electronics/Classes/BugsManager.php:56
+Stack trace:
+#0 /var/www/test.linux-electronics/eventHandler.php(53): BugsManager\BugsManager::addFileToBug()
+#1 {main}
+  thrown in /var/www/test.linux-electronics/Classes/BugsManager.php on line 56
+[03-Dec-2020 17:44:02 Asia/Dubai] PHP Notice:  Undefined variable: lastBugID in /var/www/test.linux-electronics/eventHandler.php on line 53
+[03-Dec-2020 17:44:02 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to BugsManager\BugsManager::addFileToBug() must be of the type int, null given, called in /var/www/test.linux-electronics/eventHandler.php on line 53 and defined in /var/www/test.linux-electronics/Classes/BugsManager.php:56
+Stack trace:
+#0 /var/www/test.linux-electronics/eventHandler.php(53): BugsManager\BugsManager::addFileToBug()
+#1 {main}
+  thrown in /var/www/test.linux-electronics/Classes/BugsManager.php on line 56
+[03-Dec-2020 17:44:53 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 17:44:53 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 17:51:58 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 17:51:58 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 17:53:32 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 17:53:32 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:36:05 Asia/Dubai] PHP Notice:  Undefined variable: lastBugID in /var/www/test.linux-electronics/eventHandler.php on line 52
+[03-Dec-2020 19:36:05 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to BugsManager\BugsManager::addFileToBug() must be of the type int, null given, called in /var/www/test.linux-electronics/eventHandler.php on line 52 and defined in /var/www/test.linux-electronics/Classes/BugsManager.php:56
+Stack trace:
+#0 /var/www/test.linux-electronics/eventHandler.php(52): BugsManager\BugsManager::addFileToBug()
+#1 {main}
+  thrown in /var/www/test.linux-electronics/Classes/BugsManager.php on line 56
+[03-Dec-2020 19:36:08 Asia/Dubai] PHP Notice:  Undefined variable: lastBugID in /var/www/test.linux-electronics/eventHandler.php on line 52
+[03-Dec-2020 19:36:08 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to BugsManager\BugsManager::addFileToBug() must be of the type int, null given, called in /var/www/test.linux-electronics/eventHandler.php on line 52 and defined in /var/www/test.linux-electronics/Classes/BugsManager.php:56
+Stack trace:
+#0 /var/www/test.linux-electronics/eventHandler.php(52): BugsManager\BugsManager::addFileToBug()
+#1 {main}
+  thrown in /var/www/test.linux-electronics/Classes/BugsManager.php on line 56
+[03-Dec-2020 19:36:13 Asia/Dubai] PHP Notice:  Undefined variable: lastBugID in /var/www/test.linux-electronics/eventHandler.php on line 52
+[03-Dec-2020 19:36:13 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to BugsManager\BugsManager::addFileToBug() must be of the type int, null given, called in /var/www/test.linux-electronics/eventHandler.php on line 52 and defined in /var/www/test.linux-electronics/Classes/BugsManager.php:56
+Stack trace:
+#0 /var/www/test.linux-electronics/eventHandler.php(52): BugsManager\BugsManager::addFileToBug()
+#1 {main}
+  thrown in /var/www/test.linux-electronics/Classes/BugsManager.php on line 56
+[03-Dec-2020 19:36:22 Asia/Dubai] PHP Notice:  Undefined variable: lastBugID in /var/www/test.linux-electronics/eventHandler.php on line 52
+[03-Dec-2020 19:36:22 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to BugsManager\BugsManager::addFileToBug() must be of the type int, null given, called in /var/www/test.linux-electronics/eventHandler.php on line 52 and defined in /var/www/test.linux-electronics/Classes/BugsManager.php:56
+Stack trace:
+#0 /var/www/test.linux-electronics/eventHandler.php(52): BugsManager\BugsManager::addFileToBug()
+#1 {main}
+  thrown in /var/www/test.linux-electronics/Classes/BugsManager.php on line 56
+[03-Dec-2020 19:36:39 Asia/Dubai] PHP Notice:  Undefined variable: lastBugID in /var/www/test.linux-electronics/eventHandler.php on line 52
+[03-Dec-2020 19:36:39 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to BugsManager\BugsManager::addFileToBug() must be of the type int, null given, called in /var/www/test.linux-electronics/eventHandler.php on line 52 and defined in /var/www/test.linux-electronics/Classes/BugsManager.php:56
+Stack trace:
+#0 /var/www/test.linux-electronics/eventHandler.php(52): BugsManager\BugsManager::addFileToBug()
+#1 {main}
+  thrown in /var/www/test.linux-electronics/Classes/BugsManager.php on line 56
+[03-Dec-2020 19:37:12 Asia/Dubai] PHP Notice:  Undefined variable: lastBugID in /var/www/test.linux-electronics/eventHandler.php on line 52
+[03-Dec-2020 19:37:12 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to BugsManager\BugsManager::addFileToBug() must be of the type int, null given, called in /var/www/test.linux-electronics/eventHandler.php on line 52 and defined in /var/www/test.linux-electronics/Classes/BugsManager.php:56
+Stack trace:
+#0 /var/www/test.linux-electronics/eventHandler.php(52): BugsManager\BugsManager::addFileToBug()
+#1 {main}
+  thrown in /var/www/test.linux-electronics/Classes/BugsManager.php on line 56
+[03-Dec-2020 19:38:13 Asia/Dubai] PHP Notice:  Undefined variable: lastBugID in /var/www/test.linux-electronics/eventHandler.php on line 52
+[03-Dec-2020 19:38:13 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to BugsManager\BugsManager::addFileToBug() must be of the type int, null given, called in /var/www/test.linux-electronics/eventHandler.php on line 52 and defined in /var/www/test.linux-electronics/Classes/BugsManager.php:56
+Stack trace:
+#0 /var/www/test.linux-electronics/eventHandler.php(52): BugsManager\BugsManager::addFileToBug()
+#1 {main}
+  thrown in /var/www/test.linux-electronics/Classes/BugsManager.php on line 56
+[03-Dec-2020 19:39:14 Asia/Dubai] PHP Notice:  Undefined variable: lastBugID in /var/www/test.linux-electronics/eventHandler.php on line 52
+[03-Dec-2020 19:39:14 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to BugsManager\BugsManager::addFileToBug() must be of the type int, null given, called in /var/www/test.linux-electronics/eventHandler.php on line 52 and defined in /var/www/test.linux-electronics/Classes/BugsManager.php:56
+Stack trace:
+#0 /var/www/test.linux-electronics/eventHandler.php(52): BugsManager\BugsManager::addFileToBug()
+#1 {main}
+  thrown in /var/www/test.linux-electronics/Classes/BugsManager.php on line 56
+[03-Dec-2020 19:40:16 Asia/Dubai] PHP Notice:  Undefined variable: lastBugID in /var/www/test.linux-electronics/eventHandler.php on line 52
+[03-Dec-2020 19:40:16 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Argument 1 passed to BugsManager\BugsManager::addFileToBug() must be of the type int, null given, called in /var/www/test.linux-electronics/eventHandler.php on line 52 and defined in /var/www/test.linux-electronics/Classes/BugsManager.php:56
+Stack trace:
+#0 /var/www/test.linux-electronics/eventHandler.php(52): BugsManager\BugsManager::addFileToBug()
+#1 {main}
+  thrown in /var/www/test.linux-electronics/Classes/BugsManager.php on line 56
+[03-Dec-2020 19:41:21 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:41:21 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:41:25 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:41:25 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:42:32 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:42:32 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:43:09 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:43:09 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:43:19 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:43:19 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:43:42 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:43:42 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:57:22 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:57:22 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:58:13 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:58:13 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:59:09 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:59:09 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:59:16 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 19:59:16 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 20:03:20 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 20:03:20 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 20:09:42 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 20:09:42 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 20:09:52 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 20:09:52 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 20:09:58 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 20:09:58 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 20:11:55 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 20:11:55 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 20:12:32 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 20:12:32 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 20:12:47 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72
+[03-Dec-2020 20:12:47 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 72

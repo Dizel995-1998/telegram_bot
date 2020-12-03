@@ -2,7 +2,8 @@
 
 namespace Trello\Actions;
 
-use Curl\Curl;
+
+use GuzzleHttp\Client;
 
 class Actions implements ActionInterface
 {
@@ -11,7 +12,7 @@ class Actions implements ActionInterface
     protected static function getHttpService()
     {
         if (self::$httpService == null) {
-            self::$httpService = new Curl();
+            self::$httpService = new Client(['http_errors' => false]);
         }
         return self::$httpService;
     }
@@ -47,25 +48,25 @@ class Actions implements ActionInterface
 
     public static function get(string $action, string $id)
     {
-        self::getHttpService()->sendRequest(self::prepareUrl($action, $id, null), 'GET');
-        return json_decode(self::getHttpService()->getResponse(), JSON_UNESCAPED_UNICODE);
+        $response = self::getHttpService()->get(self::prepareUrl($action, $id, null));
+        $response = $response->getBody()->getContents();
+        return is_string($response) ?? json_decode($response, JSON_UNESCAPED_UNICODE);
     }
 
     public static function update(string $action, string $id, ?array $fields)
     {
-        self::getHttpService()->sendRequest(self::prepareUrl($action, $id, $fields), 'PUT');
-        return json_decode(self::getHttpService()->getResponse(), JSON_UNESCAPED_UNICODE);
+        self::getHttpService()->put(self::prepareUrl($action, $id, $fields));
     }
 
     public static function delete(string $action, string $id)
     {
-        self::getHttpService()->sendRequest(self::prepareUrl($action, $id, null), 'DELETE');
-        return json_decode(self::getHttpService()->getResponse(), JSON_UNESCAPED_UNICODE);
+        self::getHttpService()->delete(self::prepareUrl($action, $id, null));
     }
 
-    public static function create(string $action, array $fields)
+    public static function create(string $action, array $fields) : bool
     {
-        self::getHttpService()->sendRequest(self::prepareUrl($action, null, $fields), 'POST');
-        return json_decode(self::getHttpService()->getResponse(), JSON_UNESCAPED_UNICODE);
+        $response = self::getHttpService()->post(self::prepareUrl($action, null, $fields));
+        $result = json_decode($response->getBody()->getContents(), JSON_UNESCAPED_UNICODE);
+        return (bool) $result == null ? false : true;
     }
 }
