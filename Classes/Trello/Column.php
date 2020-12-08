@@ -1,9 +1,10 @@
 <?php
 
-namespace Trello;
-use Trello\Actions\Actions;
+namespace Core\Trello;
 
-class TrelloList
+use Core\Trello\Actions\Actions;
+
+class Column
 {
     CONST ACTION = 'lists';
 

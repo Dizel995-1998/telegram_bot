@@ -10,15 +10,13 @@
         "ext-mbstring": "*"
     },
     "autoload": {
+        "files": [
+            "config/settings.php"
+        ],
         "psr-4": {
-            "TelegramBot\\" : "Classes/",
-            "Curl\\" : "Classes/",
-            "BugsManager\\" : "Classes/",
-            "Logger\\" : "Classes/",
-            "Trello\\" : "Classes/Trello/",
-            "Trello\\Actions\\" : "Classes/Trello/Actions/",
-            "FileManager\\" : "Classes/",
-            "\\" : ""
+            "Core\\" : "Classes/",
+            "Core\\Trello\\" : "Classes/Trello/",
+            "Core\\Trello\\Actions\\" : "Classes/Trello/Actions/"
         }
     }
 }

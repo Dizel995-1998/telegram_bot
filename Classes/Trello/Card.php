@@ -1,9 +1,11 @@
 <?php
 
-namespace Trello;
-use Trello\Actions\Actions;
+namespace Core\Trello;
 
-class TrelloCard
+
+use Core\Trello\Actions\Actions;
+
+class Card
 {
     CONST ACTION = 'cards';
 
@@ -42,5 +44,15 @@ class TrelloCard
             ['idList' => $idList, 'name' => $name];
 
         return Actions::create(self::ACTION, $arFields);
+    }
+
+    public static function getCards($boardID)
+    {
+        return Actions::get(self::ACTION, $boardID);
+    }
+
+    public static function getMemberShipsOfCards($boardID)
+    {
+        return Actions::getMemberShipsOfBoard($boardID);
     }
 }

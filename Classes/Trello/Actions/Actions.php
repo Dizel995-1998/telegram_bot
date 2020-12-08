@@ -1,6 +1,6 @@
 <?php
 
-namespace Trello\Actions;
+namespace Core\Trello\Actions;
 
 
 use GuzzleHttp\Client;
@@ -46,11 +46,19 @@ class Actions implements ActionInterface
         return $resultURL;
     }
 
-    public static function get(string $action, string $id)
+    // TEST
+    public static function getMemberShipsOfBoard($boardID)
+    {
+        $resultURL = self::getTrelloURL() . 'boards/' . $boardID . '/memberships?key=' . self::getKey() . '&token=' . self::getToken();
+        $response = self::getHttpService()->get($resultURL);
+        return $response->getBody()->getContents();
+    }
+
+    public static function get(string $action, string $id) : array
     {
         $response = self::getHttpService()->get(self::prepareUrl($action, $id, null));
         $response = $response->getBody()->getContents();
-        return is_string($response) ?? json_decode($response, JSON_UNESCAPED_UNICODE);
+        return is_string($response) ? json_decode($response, JSON_UNESCAPED_UNICODE) : [];
     }
 
     public static function update(string $action, string $id, ?array $fields)

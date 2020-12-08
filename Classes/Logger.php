@@ -1,7 +1,6 @@
 <?php
 
-namespace Logger;
-//require_once 'config/settings.php';
+namespace Core;
 
 class Logger
 {

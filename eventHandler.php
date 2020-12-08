@@ -1,14 +1,13 @@
 <?php
 
-require_once 'vendor/autoload.php';
-require_once 'config/settings.php';
-require_once 'download.php';
-
-use Trello\TrelloCard;
-use BugsManager\BugsManager;
-use Logger\Logger;
-use TelegramBot\TelegramBot;
+use Core\BugsManager;
+use Core\Logger;
+use Core\TelegramBot;
+use Core\Trello\Facade;
 use GuzzleHttp\Client;
+
+require_once 'vendor/autoload.php';
+require_once 'someFunctions.php';
 
 ini_set('log_errors', 'On');
 ini_set('error_log', 'logs.txt');
@@ -16,78 +15,81 @@ ini_set('error_log', 'logs.txt');
 $telegramBot = new TelegramBot(TELEGRAM_BOT_TOKEN, file_get_contents('php://input'), new Client(['http_errors' => false]));
 
 $currentChatID = $telegramBot->getChatId();
-$messageID = $telegramBot->getMessageID();
-$author = $telegramBot->getUserName();
-$messageGroupID = $telegramBot->getMediaGroupID();
-$message = $telegramBot->getTextFromMessage();
+$telegramMessageID = $telegramBot->getMessageID();
+$telegramAuthor = $telegramBot->getUserName();
+$telegramMessageText = $telegramBot->getTextFromMessage();
+$telegramMediaGroupID = $telegramBot->getMediaGroupID();
+$telegramFileID = $telegramBot->getFileId();
 
-if ($telegramBot->messageHas('~^#(баг|bug)~') && $currentChatID == TELEGRAM_COMMON_GROUP_CHAT_ID) {
-    $message = str_replace('#баг', '', $message);
-    if (BugsManager::addRowToBugs($message, $author, $messageID, $messageGroupID)) {
-        $lastBugID = BugsManager::getLastBugID();
-        $messageForTesters =
-            'Баг №' . $lastBugID . PHP_EOL .
-            'Автор: ' . $author . PHP_EOL .
-            'Описание: ' . $message;
-
-        $telegramBot->sendMessage(TELEGRAM_TEST_GROUP_CHAT_ID, 'message', $messageForTesters);
-        //die();
-    } else {
-        Logger::writeLine('Не смог записать описание бага в БД');
-        die();
-    }
-}
-
-if ($messageGroupID && $currentChatID == TELEGRAM_COMMON_GROUP_CHAT_ID || $telegramBot->getMessageType() != 'message') {
-    $lastBugID = BugsManager::getLastBugID();
-    $telegramBot->sendMessage(TELEGRAM_TEST_GROUP_CHAT_ID, $telegramBot->getMessageType(), '', $telegramBot->getFileId());
-    $url = $telegramBot->getReferenceByFileID($telegramBot->getFileId());
-    $extensionFile = getExtensionFileByURL($url);
-    $fileName = time() . rand(0, 9) . '.' . $extensionFile;
-
-    if (!downloadFile($url, DOWNLOAD_DIRECTORY, $fileName)) {
-        Logger::writeLine('Не смог загрузить изображение с сервера телеграмма');
-        die();
-    }
-
-    if (!BugsManager::addFileToBug($lastBugID, DOWNLOAD_DIRECTORY . $fileName, $telegramBot->getFileId())) {
-        Logger::writeLine('Не удалось записать путь к файлам бага');
-    }
-}
-
-if ($telegramBot->replyMessage() && $telegramBot->messageHas('~^#fixed~') && $currentChatID == TELEGRAM_TEST_GROUP_CHAT_ID) {
-    if (preg_match('~Баг №(?<bug_id>\d+)~', $telegramBot->getReplyOriginText(), $matches)) {
-        $arBug = BugsManager::getAllInformationAboutBug($matches['bug_id']);
-        $messageID = $arBug['message_id'];
-        $telegramBot->answerOnMessageID(TELEGRAM_COMMON_GROUP_CHAT_ID, TELEGRAM_ANSWER_ON_FIX_BUG, $messageID);
-    } else {
-        $telegramBot->sendMessage($currentChatID, 'message', 'Не удалось определелить ID бага, свяжитесь с разработчиками');
-    }
-}
-
-if ($telegramBot->replyMessage() && $telegramBot->messageHas('~^#trello~')) {
-    if (preg_match('~Баг №(?<bug_id>\d+)~', $telegramBot->getReplyOriginText(), $matches)) {
-        $bugID = $matches['bug_id'];
-
-        $arInfoAboutBug = BugsManager::getAllInformationAboutBug($bugID);
-        $linksToFiles = BugsManager::getPathToFilesByBugID($bugID);
-
-        $trelloMessage =
-            'Баг №' . $bugID . PHP_EOL .
-            'Автор: ' . $arInfoAboutBug['bug_author'] . PHP_EOL .
-            'Описание: ' . $arInfoAboutBug['bug_description'] . PHP_EOL .
-            'Файлы прикреплённые к сообщению:' . PHP_EOL;
-
-        foreach ($linksToFiles as $filePath) {
-            $trelloMessage .= OUR_DOMAIN . $filePath . PHP_EOL;
+if ($currentChatID == TELEGRAM_COMMON_GROUP_CHAT_ID) {
+    if ($telegramBot->messageHas('~#(баг|bug)~')) {
+        $message = preg_replace('~#(баг|bug)~', '', $telegramMessageText);
+        if (mb_strlen($message) > 2 && BugsManager::addRowToBugs($message, $telegramAuthor, $telegramMessageID, $telegramMediaGroupID)) {
+            $lastBugID = BugsManager::getLastBugID();
+            $message = prepareMessage($telegramAuthor, $lastBugID, $telegramMessageText);
+            if ($telegramBot->getMessageType() != 'message') {
+                saveBug($telegramBot->getReferenceByFileID($telegramFileID), $lastBugID, $telegramFileID);
+            }
+            $telegramBot->sendMessage(TELEGRAM_TEST_GROUP_CHAT_ID, $telegramBot->getMessageType(), $message, $telegramBot->getFileId());
+            die();
+        } else {
+            Logger::writeLine('Не удалось записать баг в БД');
+            $telegramBot->sendMessage(TELEGRAM_TEST_GROUP_CHAT_ID, $telegramBot->getMessageType(), $telegramMessageText, $telegramBot->getFileId());
+            $telegramBot->sendMessage(TELEGRAM_TEST_GROUP_CHAT_ID, 'message', 'Не удалось записать баг в БД, свяжитесь с разрабами');
         }
+    }
 
-        $message = TrelloCard::createCard('5fbe644ac20bdb66691ce589', 'Баг №' . $bugID, $trelloMessage) ?
-            'Trello карта создана' : 'Не получилось создать Trello карту';
+    // Данный кусок кода запустится если сообщение было составным
+    if ($telegramMediaGroupID) {
+        $lastBugID = BugsManager::getLastBugID();
+        $mediaGroupID = BugsManager::getAllInformationAboutBug($lastBugID)['message_group_id'];
+        if ($mediaGroupID == $telegramMediaGroupID) {
+            $telegramBot->sendMessage(TELEGRAM_TEST_GROUP_CHAT_ID, $telegramBot->getMessageType(), '', $telegramFileID);
+            saveBug($telegramBot->getReferenceByFileID($telegramFileID), $lastBugID, $telegramFileID);
+        }
+    }
+}
 
-        $telegramBot->sendMessage(TELEGRAM_TEST_GROUP_CHAT_ID, 'message', $message);
-    } else {
-        $telegramBot->sendMessage(TELEGRAM_TEST_GROUP_CHAT_ID, 'message', 'Не удалось определелить ID бага, свяжитесь с разработчиками');
+if ($currentChatID == TELEGRAM_TEST_GROUP_CHAT_ID) {
+    if ($telegramBot->replyMessage() && $telegramBot->messageHas('~^#fixed~')) {
+        if (preg_match('~Баг №(?<bug_id>\d+)~', $telegramBot->getReplyOriginText(), $matches)) {
+            $arBug = BugsManager::getAllInformationAboutBug($matches['bug_id']);
+            $messageID = $arBug['message_id'];
+            $telegramBot->answerOnMessageID(TELEGRAM_COMMON_GROUP_CHAT_ID, TELEGRAM_ANSWER_ON_FIX_BUG, $messageID);
+        } else {
+            $telegramBot->sendMessage($currentChatID, 'message', 'Не удалось определелить ID бага, свяжитесь с разработчиками');
+        }
+    }
+
+    if ($telegramBot->replyMessage() && $telegramBot->messageHas('~^#trello~')) {
+        if (preg_match('~Баг №(?<bug_id>\d+)~', $telegramBot->getReplyOriginText(), $matches)) {
+            $bugID = $matches['bug_id'];
+            $arInfoAboutBug = BugsManager::getAllInformationAboutBug($bugID);
+            $linksToFiles = BugsManager::getPathToFilesByBugID($bugID);
+            $trelloMessage = prepareMessage(
+                    (string) $arInfoAboutBug['bug_author'],
+                    (int) $bugID, (string) $arInfoAboutBug['bug_description']) .
+                'Файлы прикреплённые к сообщению:' . PHP_EOL;
+
+            foreach ($linksToFiles as $filePath) {
+                $trelloMessage .= OUR_DOMAIN . $filePath . PHP_EOL;
+            }
+
+            $cardStatusText = Facade::createCard(
+                TRELLO_BOARD_NAME, TRELLO_COLUMN_NAME, 'Баг №' . $bugID, $trelloMessage
+            ) ? 'Trello карта создана' : 'Не получилось создать Trello карту';
+
+            $telegramBot->sendMessage(TELEGRAM_TEST_GROUP_CHAT_ID, 'message', $cardStatusText);
+        } else {
+            $telegramBot->sendMessage(TELEGRAM_TEST_GROUP_CHAT_ID, 'message', 'Не удалось определелить ID бага, свяжитесь с разработчиками');
+        }
+    }
+
+    if ($telegramBot->messageHas('~^/fixBug (?<id>\d+)~', $matches)) {
+        $message = BugsManager::bugFix($matches['id']) ?
+            'Баг с ID ' . $matches['id'] . ' был помечен как исправленный' :
+            '[ERROR] не удалось изменить состояние бага на исправленный';
+        $telegramBot->sendMessage($currentChatID, 'message', $message);
     }
 }
 
@@ -97,13 +99,6 @@ if ($telegramBot->messageHas('~^/help~')) {
 
 if ($telegramBot->messageHas('~^/getInstructions~')) {
     $message = preg_replace('/\s+/', ' ', DESCRIPTION_HOW_WORK_BOT);
-    $telegramBot->sendMessage($currentChatID, 'message', $message);
-}
-
-if ($telegramBot->messageHas('~^/fixBug (?<id>\d+)~', $matches)) {
-    $message = BugsManager::bugFix($matches['id']) ?
-        'Баг с ID ' . $matches['id'] . ' был помечен как исправленный' :
-        '[ERROR] не удалось изменить состояние бага на исправленный';
     $telegramBot->sendMessage($currentChatID, 'message', $message);
 }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Trello\Actions;
+namespace Core\Trello\Actions;
 
 interface ActionInterface
 {

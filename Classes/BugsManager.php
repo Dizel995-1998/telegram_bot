@@ -1,12 +1,10 @@
 <?php
 
-namespace BugsManager;
-use Logger\Logger;
-require_once 'config/settings.php';
+namespace Core;
 
 class BugsManager
 {
-    protected static $pdo = null;
+    private static $pdo = null;
 
     protected static function getPDOconnection()
     {

@@ -30,6 +30,8 @@ CONST TELEGRAM_ANSWER_ON_FIX_BUG  = 'Данный баг был помечен �
 CONST TRELLO_KEY = '010ef0062b53ab1e9b7ac112dca9f805';
 CONST TRELLO_TOKEN = 'af6ee7700002364f55f5224edaba230109d366cf22ef74e6c01621491d7b6953';
 CONST OUR_SERVER_DOMAIN = 'https://test.linux-electronics.ru/';
+CONST TRELLO_BOARD_NAME = 'hello world';
+CONST TRELLO_COLUMN_NAME = 'Тестировщики';
 
 /* Настройка логгер файла */
 CONST LOGGER_FILE = 'logger.txt';

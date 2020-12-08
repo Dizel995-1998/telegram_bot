@@ -11,27 +11,14 @@ class ComposerStaticInit4cbd862ee94adc0c9751bba458336316
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+        '5a7369c31637471e6ae1e8222c640cae' => __DIR__ . '/../..' . '/config/settings.php',
     );
 
     public static $prefixLengthsPsr4 = array (
-        '\\' => 
-        array (
-            '\\' => 1,
-        ),
-        'T' => 
-        array (
-            'Trello\\Actions\\' => 15,
-            'Trello\\' => 7,
-            'TelegramBot\\' => 12,
-        ),
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
-        ),
-        'L' => 
-        array (
-            'Logger\\' => 7,
         ),
         'G' => 
         array (
@@ -39,37 +26,15 @@ class ComposerStaticInit4cbd862ee94adc0c9751bba458336316
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
         ),
-        'F' => 
-        array (
-            'FileManager\\' => 12,
-        ),
         'C' => 
         array (
-            'Curl\\' => 5,
-        ),
-        'B' => 
-        array (
-            'BugsManager\\' => 12,
+            'Core\\Trello\\Actions\\' => 20,
+            'Core\\Trello\\' => 12,
+            'Core\\' => 5,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        '\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/',
-        ),
-        'Trello\\Actions\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Classes/Trello/Actions',
-        ),
-        'Trello\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Classes/Trello',
-        ),
-        'TelegramBot\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Classes',
-        ),
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
@@ -77,10 +42,6 @@ class ComposerStaticInit4cbd862ee94adc0c9751bba458336316
         'Psr\\Http\\Client\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-client/src',
-        ),
-        'Logger\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/Classes',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
@@ -94,15 +55,15 @@ class ComposerStaticInit4cbd862ee94adc0c9751bba458336316
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
-        'FileManager\\' => 
+        'Core\\Trello\\Actions\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Classes',
+            0 => __DIR__ . '/../..' . '/Classes/Trello/Actions',
         ),
-        'Curl\\' => 
+        'Core\\Trello\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/Classes',
+            0 => __DIR__ . '/../..' . '/Classes/Trello',
         ),
-        'BugsManager\\' => 
+        'Core\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Classes',
         ),

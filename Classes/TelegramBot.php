@@ -1,11 +1,10 @@
 <?php
 
-namespace TelegramBot;
+namespace Core;
 
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
-use Logger\Logger;
 
 class TelegramBot
 {
@@ -263,5 +262,6 @@ class TelegramBot
         $url = $this->telegramUrl . 'bot' . $this->token . '/sendMediaGroup?chat_id=' . $chatID .
             '&caption=' . $text . '&media=[' . $photo . ']';
         $this->httpService->get($url);
+        return $url;
     }
 }

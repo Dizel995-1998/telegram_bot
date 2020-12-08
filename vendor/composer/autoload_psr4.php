@@ -6,17 +6,12 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    '\\' => array($baseDir . '/'),
-    'Trello\\Actions\\' => array($baseDir . '/Classes/Trello/Actions'),
-    'Trello\\' => array($baseDir . '/Classes/Trello'),
-    'TelegramBot\\' => array($baseDir . '/Classes'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Psr\\Http\\Client\\' => array($vendorDir . '/psr/http-client/src'),
-    'Logger\\' => array($baseDir . '/Classes'),
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
     'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
-    'FileManager\\' => array($baseDir . '/Classes'),
-    'Curl\\' => array($baseDir . '/Classes'),
-    'BugsManager\\' => array($baseDir . '/Classes'),
+    'Core\\Trello\\Actions\\' => array($baseDir . '/Classes/Trello/Actions'),
+    'Core\\Trello\\' => array($baseDir . '/Classes/Trello'),
+    'Core\\' => array($baseDir . '/Classes'),
 );
