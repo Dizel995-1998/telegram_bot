@@ -3,6 +3,7 @@
 namespace Core\Trello\Actions;
 
 
+use Core\Logger;
 use GuzzleHttp\Client;
 
 class Actions implements ActionInterface

@@ -37,10 +37,10 @@ class Card
         return Actions::delete(self::ACTION, $cardID) == 'card not found' ? false : true;
     }
 
-    public static function createCard(string $idList, string $name, ?string $desc) : bool
+    public static function createCard(string $idList, string $name, ?string $desc, ?string $position)
     {
-        $arFields = isset($desc) ?
-            ['idList' => $idList, 'name' => $name, 'desc' => $desc] :
+        $arFields = isset($desc) || isset($position)?
+            ['idList' => $idList, 'name' => $name, 'desc' => $desc, 'pos' => $position] :
             ['idList' => $idList, 'name' => $name];
 
         return Actions::create(self::ACTION, $arFields);

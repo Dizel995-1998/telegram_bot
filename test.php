@@ -1,5 +1,10 @@
 <?php
 
+use Core\Trello\Board;
+use Core\Trello\Card;
+use Core\Trello\Facade;
+use GuzzleHttp\Client;
+
 require_once 'vendor/autoload.php';
 require_once 'someFunctions.php';
 require_once 'config/settings.php';
@@ -8,32 +13,15 @@ ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 
-$telegramBot = new \Core\TelegramBot(TELEGRAM_BOT_TOKEN, file_get_contents('php://input'), new \GuzzleHttp\Client(['http_errors' => false]));
-$photoFilesID = [
-    'AgACAgIAAxkBAAIF3V_OCeF0y-STt0jwswbLrVzW4uRQAAKUsDEbkzZwSpQzQQ8zbpar_h1Lli4AAwEAAwIAA20AA-RgBQABHgQ',
-    'AgACAgIAAxkBAAIF3l_OCeFV48sWnlF6lFVBUURXCTqAAAKVsDEbkzZwSvkSPAABiGFlB_Mk6pcuAAMBAAMCAAN5AAOvBwQAAR4E'
-];
-
-
-$type = "photo";
-$caption = "";
-$media = [];
-
-foreach ($photoFilesID as $file)
-{
-    $media[] = [
-        'type' => $type,
-        'media' => $file
-    ];
-}
-
-$parameters = [
-    'chat_id' => 'test_chat_id',
-    'media' => json_encode($media)
-];
-
-var_dump($parameters);
-
+$body = ['cover' => ['color' => 'black'], 'name' => 'The Dark Knight'];
+$httpClient = new Client(['http_errors' => false]);
+$host = 'https://api.trello.com/1/cards/5fe331fe17139c5e59cb24d5?key=010ef0062b53ab1e9b7ac112dca9f805&token=af6ee7700002364f55f5224edaba230109d366cf22ef74e6c01621491d7b6953&cover=eyJjb2xvciI6InllbGxvdyJ9';
+$response = $httpClient->put($host, ['json' => ($body)]);
+var_dump(json_decode($response->getBody()->getContents(), true));
 die();
-$url = $telegramBot->sendMediaPhoto('691046923', $photoFilesID, 'ss');
-var_dump($url);
+$response = Card::updateCard('5fe331fe17139c5e59cb24d5', ['cover' => base64_encode(json_encode(['color' => 'yellow']))]);
+var_dump($response);
+die();
+
+$response = Facade::createCard(TRELLO_BOARD_NAME, TRELLO_COLUMN_NAME, 'тестовая карточка', '123', 'top');
+var_dump($response);

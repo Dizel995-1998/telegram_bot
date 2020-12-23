@@ -23,7 +23,7 @@ function prepareMessage(string $author, int $bugNumber, string $messageText) : s
         'Описание: ' . $messageText . PHP_EOL;
 }
 
-function saveBug(string $linkForDownload, int $numberBug, string $fileID)
+function downloadImage(string $linkForDownload, int $numberBug, string $fileID)
 {
     $extensionFile = getExtensionFileByURL($linkForDownload);
     $fileName = time() . rand(0, 99) . '.' . $extensionFile;
