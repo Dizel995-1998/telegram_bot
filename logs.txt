@@ -304,3 +304,229 @@ Stack trace:
 [24-Dec-2020 10:49:35 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
 [24-Dec-2020 10:50:16 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
 [24-Dec-2020 10:50:16 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:31:20 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:31:20 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:32:10 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:32:10 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:33:28 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:33:28 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:33:34 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:33:34 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:50:22 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:50:22 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:50:25 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:50:25 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:50:43 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:50:43 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:50:50 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:50:50 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:51:59 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:51:59 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:52:08 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:52:08 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:58:53 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:58:53 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:59:05 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:59:05 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:59:16 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:59:16 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:59:35 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 11:59:35 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:00:40 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:00:40 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:01:11 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:01:11 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:01:13 Asia/Dubai] PHP Warning:  preg_match(): No ending delimiter '~' found in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 145
+[24-Dec-2020 12:02:03 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:02:03 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:02:05 Asia/Dubai] PHP Warning:  preg_match(): No ending delimiter '~' found in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 145
+[24-Dec-2020 12:02:39 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:02:39 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:02:47 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:02:47 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:02:49 Asia/Dubai] PHP Warning:  preg_match(): No ending delimiter '~' found in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 145
+[24-Dec-2020 12:03:21 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:03:21 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:05:07 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:05:07 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:05:13 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:05:13 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:05:24 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:05:24 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:05:29 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:05:29 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:11:39 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:11:39 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:11:50 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:11:50 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:11:52 Asia/Dubai] PHP Warning:  preg_match(): No ending delimiter '~' found in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 145
+[24-Dec-2020 12:13:11 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:13:11 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:17:47 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:17:47 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:24:45 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:24:45 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:33:31 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:33:31 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:33:31 Asia/Dubai] PHP Notice:  Undefined index: bug_author in /var/www/test.linux-electronics/eventHandler.php on line 88
+[24-Dec-2020 12:33:31 Asia/Dubai] PHP Notice:  Undefined index: bug_description in /var/www/test.linux-electronics/eventHandler.php on line 89
+[24-Dec-2020 12:34:13 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:34:13 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:34:13 Asia/Dubai] PHP Notice:  Undefined index: bug_author in /var/www/test.linux-electronics/eventHandler.php on line 88
+[24-Dec-2020 12:34:13 Asia/Dubai] PHP Notice:  Undefined index: bug_description in /var/www/test.linux-electronics/eventHandler.php on line 89
+[24-Dec-2020 12:34:35 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:34:35 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:35:22 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:35:22 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:36:18 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:36:18 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:36:21 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:36:21 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:37:11 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:37:11 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:39:36 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:39:36 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:40:08 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:40:08 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:40:34 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:40:34 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:41:44 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:41:44 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:42:18 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:42:18 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:42:19 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:42:19 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:42:23 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:42:23 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:42:28 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:42:28 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:42:43 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:42:43 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:42:47 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:42:47 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:43:07 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:43:07 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:43:31 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:43:31 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:44:01 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:44:01 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:44:07 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:44:07 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:46:45 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:46:45 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:47:31 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:47:31 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:48:17 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:48:17 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:52:47 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:52:47 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:52:51 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:52:51 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:53:02 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:53:02 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:53:37 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:53:37 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:53:39 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:53:39 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:53:50 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:53:50 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:53:57 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:53:57 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:55:28 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:55:28 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:55:47 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:55:47 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:55:57 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:55:57 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:56:06 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:56:06 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:57:12 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:57:12 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:58:39 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:58:39 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:59:00 Asia/Dubai] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ConnectException: cURL error 6: Could not resolve host: api.telegram.org (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://api.telegram.org/bot1104270168:AAF_MG47TJ5HI5d_t7DK92wejR0Mvy_gBZk/sendMessage?chat_id=-1001484960835&text=%D0%97%D0%B0%D0%BC%D0%B5%D1%82%D0%B8%D0%BB%D0%B8+%D0%B1%D0%B0%D0%B3%3F+%D0%BF%D0%B8%D1%88%D0%B8%D1%82%D0%B5+%23%D0%B1%D0%B0%D0%B3+%D0%B8%D0%BB%D0%B8+%23bug+%D0%B8+%D0%BE%D0%BF%D0%B8%D1%81%D1%8B%D0%B2%D0%B0%D0%B9%D1%82%D0%B5+%D0%B1%D0%B0%D0%B3%2C+%D0%BC%D0%BE%D0%B6%D0%B5%D1%82%D0%B5+%D0%BF%D1%80%D0%B8%D0%BA%D0%BB%D0%B0%D0%B4%D1%8B%D0%B2%D0%B0%D1%82%D1%8C+%D0%BA+%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8E+%D1%81%D0%BA%D1%80%D0%B8%D1%88%D0%BE%D1%82%D1%8B+%D0%B1%D0%B0%D0%B3%D0%B0.+%D0%95%D1%81%D1%82%D1%8C+%D0%B8%D0%B4%D0%B5%D1%8F+%D0%B4%D0%BB%D1%8F+%D0%BD%D0%BE%D0%B2%D0%BE%D0%B9+%D1%84%D0%B8%D1%87%D0%B8%3F+%D0%BF%D0%B8%D1%88%D0%B8%D1%82%D0%B5+%23%D1%84%D0%B8%D1%87%D0%B0+%D0%B8+%D0%BE%D0%BF%D0%B8%D1%81%D1%8B%D0%B2%D0%B0%D0%B9+%D1 in /var/www/test.linux-electronics/vendor/guzzlehttp/guzzle/src/Handler/CurlFactory.php on line 210
+[24-Dec-2020 12:59:02 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:59:02 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:59:33 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:59:33 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:59:38 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:59:38 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:59:45 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 12:59:45 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:00:28 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:00:28 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:00:32 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:00:32 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:00:32 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:00:46 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:00:46 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:01:10 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:01:10 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:01:10 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:01:15 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:01:15 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:01:58 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:01:58 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:01 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:01 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:02 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:02 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:04 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:04 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:04 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:04 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:05 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:05 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:06 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:06 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:06 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:06 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:06 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:06 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:08 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:08 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:16 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:16 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:17 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:17 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:34 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:34 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:44 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:44 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:44 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:44 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:49 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:02:49 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:03:09 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:03:09 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:03:56 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:03:56 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:04:03 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:04:03 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:04:06 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:04:06 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:04:19 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:04:19 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:04:39 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:04:39 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:04:39 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:04:45 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:04:45 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:05:20 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:05:20 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:05:33 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:05:33 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:05:41 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:05:41 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:05:55 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:05:55 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:06:02 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:06:02 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:06:21 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:06:21 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:06:23 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:06:23 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:06:45 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:06:45 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:06:47 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 13:06:47 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71

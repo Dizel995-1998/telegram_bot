@@ -19,20 +19,22 @@ class BugsManager
      * @param string $bugDescription - описание бага
      * @param string $bugAuthor - пользователь заметивший баг
      * @param string $messageID
-     * @param bool $flag_feature
      * @param string $chatID
+     * @param string $redirectChatID
+     * @param bool $flag_feature
      * @param string|null $messageGroupID
      * @return bool - возвращает true, в случае успешной записи бага в БД
      */
-    public static function addRowToBugs(string $bugDescription, string $bugAuthor, string $messageID, string $chatID, bool $flag_feature, ?string $messageGroupID) : bool
+    public static function addRowToBugs(string $bugDescription, string $bugAuthor, string $messageID, string $chatID, string $redirectChatID, ?bool $flag_feature, ?string $messageGroupID) : bool
     {
-        $query = 'INSERT INTO bugs (bug_description, bug_author, message_id, message_group_id, chat_id, flag_feature)
-                  VALUES ( :bug_description, :bug_author, :message_id, :message_group_id, :chat_id, :flag_feature)';
+        $query = 'INSERT INTO bugs (bug_description, bug_author, message_id, message_group_id, chat_id, flag_feature, redirect_chat_id)
+                  VALUES ( :bug_description, :bug_author, :message_id, :message_group_id, :chat_id, :flag_feature, :redirect_chat_id)';
         return (bool) self::getPDOconnection()
             ->prepare($query)
             ->execute([':bug_description' => $bugDescription, ':bug_author' => $bugAuthor,
                        ':message_group_id' => $messageGroupID, ':message_id' => $messageID,
-                       ':chat_id' => $chatID, ':flag_feature' => $flag_feature]);
+                       ':chat_id' => $chatID, ':flag_feature' => $flag_feature,
+                       ':redirect_chat_id' => $redirectChatID]);
     }
 
     /**
@@ -122,7 +124,7 @@ class BugsManager
     public static function getAllInformationAboutBug(int $bugID)
     {
         $obResult = self::getPDOconnection()->prepare(
-            'SELECT bug_description, bug_author, bug_fix, message_group_id, message_id, chat_id FROM bugs WHERE bug_id = :bug_id');
+            'SELECT * FROM bugs WHERE bug_id = :bug_id');
         $obResult->execute([':bug_id' => $bugID]);
         $result = $obResult->fetch(\PDO::FETCH_ASSOC);
         if (is_bool($result)) {

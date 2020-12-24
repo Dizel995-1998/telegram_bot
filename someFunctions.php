@@ -15,10 +15,10 @@ function getExtensionFileByURL(string $url)
     return end($arUrl);
 }
 
-function prepareMessage(string $author, int $bugNumber, string $messageText) : string
+function prepareMessage(string $themeTopic, string $author, int $bugNumber, string $messageText) : string
 {
     return
-        'Баг №' . $bugNumber . PHP_EOL .
+         $themeTopic . ' №' . $bugNumber . PHP_EOL .
         'Автор: ' . $author . PHP_EOL .
         'Описание: ' . $messageText . PHP_EOL;
 }
