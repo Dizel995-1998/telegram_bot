@@ -20,3 +20,287 @@ Stack trace:
 #4 /var/www/test.linux-electronics/eventHandler.php(109): Core\Trello\Facade::createCard()
 #5 {main}
   thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 63
+[23-Dec-2020 18:20:40 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:20:40 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:20:40 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:62
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(109): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 62
+[23-Dec-2020 18:21:40 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:21:40 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:21:41 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:62
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(109): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 62
+[23-Dec-2020 18:22:41 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:22:41 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:22:42 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:62
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(109): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 62
+[23-Dec-2020 18:22:50 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:22:50 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:22:50 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:23:42 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:23:42 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:23:43 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:62
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(109): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 62
+[23-Dec-2020 18:24:43 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:24:43 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:24:44 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:62
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(109): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 62
+[23-Dec-2020 18:25:44 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:25:44 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:25:45 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:62
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(109): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 62
+[23-Dec-2020 18:26:45 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:26:45 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:26:45 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to GuzzleHttp\Client::get() must be of the type array, null given, called in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 53 and defined in /var/www/test.linux-electronics/vendor/guzzlehttp/guzzle/src/ClientTrait.php:42
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php(53): GuzzleHttp\Client->get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(45): Core\Trello\Actions\Actions::get()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(29): Core\Trello\Board::getBoardCollection()
+#3 /var/www/test.linux-electronics/Classes/Trello/Board.php(18): Core\Trello\Board::getBoardIDbyBoardName()
+#4 /var/www/test.linux-electronics/Classes/Trello/Facade.php(11): Core\Trello\Board::getBoardID()
+#5 /var/www/test.linux-electronics/eventHandler.php(109): Core\Trello\Facade::createCard()
+#6 {main}
+  thrown in /var/www/test.linux-electronics/vendor/guzzlehttp/guzzle/src/ClientTrait.php on line 42
+[23-Dec-2020 18:27:45 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:27:45 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:27:45 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Argument 2 passed to GuzzleHttp\Client::get() must be of the type array, null given, called in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 53 and defined in /var/www/test.linux-electronics/vendor/guzzlehttp/guzzle/src/ClientTrait.php:42
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php(53): GuzzleHttp\Client->get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(45): Core\Trello\Actions\Actions::get()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(29): Core\Trello\Board::getBoardCollection()
+#3 /var/www/test.linux-electronics/Classes/Trello/Board.php(18): Core\Trello\Board::getBoardIDbyBoardName()
+#4 /var/www/test.linux-electronics/Classes/Trello/Facade.php(11): Core\Trello\Board::getBoardID()
+#5 /var/www/test.linux-electronics/eventHandler.php(109): Core\Trello\Facade::createCard()
+#6 {main}
+  thrown in /var/www/test.linux-electronics/vendor/guzzlehttp/guzzle/src/ClientTrait.php on line 42
+[23-Dec-2020 18:28:45 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:28:45 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:28:46 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:55
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(109): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 55
+[23-Dec-2020 18:29:46 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:29:46 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:29:47 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:55
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(109): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 55
+[23-Dec-2020 18:30:47 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:30:47 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:30:48 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:55
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(109): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 55
+[23-Dec-2020 18:31:48 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:31:48 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:31:49 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:55
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(109): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 55
+[23-Dec-2020 18:32:49 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:32:49 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:32:49 Asia/Dubai] PHP Parse error:  syntax error, unexpected ')' in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 63
+[23-Dec-2020 18:33:49 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:33:49 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:33:50 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:55
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(109): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 55
+[23-Dec-2020 18:34:50 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:34:50 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:34:50 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:55
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(109): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 55
+[23-Dec-2020 18:35:50 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:35:50 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:35:51 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:55
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(109): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 55
+[23-Dec-2020 18:36:51 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:36:51 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:36:52 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:54
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(109): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 54
+[23-Dec-2020 18:37:52 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:37:52 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:37:53 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:54
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(107): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 54
+[23-Dec-2020 18:38:53 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:38:53 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:38:54 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:54
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(107): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 54
+[23-Dec-2020 18:39:54 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:39:54 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:39:55 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:54
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(107): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 54
+[23-Dec-2020 18:40:55 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:40:55 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:40:56 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:54
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(107): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 54
+[23-Dec-2020 18:41:56 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:41:56 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:41:57 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:54
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(107): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 54
+[23-Dec-2020 18:42:57 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:42:57 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:42:58 Asia/Dubai] PHP Fatal error:  Uncaught TypeError: Return value of Core\Trello\Actions\Actions::get() must be of the type array, null returned in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php:56
+Stack trace:
+#0 /var/www/test.linux-electronics/Classes/Trello/Board.php(13): Core\Trello\Actions\Actions::get()
+#1 /var/www/test.linux-electronics/Classes/Trello/Board.php(62): Core\Trello\Board::getListCollection()
+#2 /var/www/test.linux-electronics/Classes/Trello/Board.php(50): Core\Trello\Board::getListsByListName()
+#3 /var/www/test.linux-electronics/Classes/Trello/Facade.php(12): Core\Trello\Board::getListIDbyListName()
+#4 /var/www/test.linux-electronics/eventHandler.php(107): Core\Trello\Facade::createCard()
+#5 {main}
+  thrown in /var/www/test.linux-electronics/Classes/Trello/Actions/Actions.php on line 56
+[23-Dec-2020 18:42:58 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:42:58 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:42:59 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:42:59 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:42:59 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:42:59 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:42:59 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:42:59 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:43:00 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:43:00 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:46:29 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:46:29 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:54:08 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[23-Dec-2020 18:54:08 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:45:43 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:45:43 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:45:57 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:45:57 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:46:05 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:46:05 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:46:45 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:46:45 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:46:56 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:46:56 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:48:02 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:48:02 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:49:25 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:49:25 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:49:30 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:49:30 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:49:35 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:49:35 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:50:16 Asia/Dubai] PHP Notice:  Undefined index: message in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71
+[24-Dec-2020 10:50:16 Asia/Dubai] PHP Notice:  Trying to access array offset on value of type null in /var/www/test.linux-electronics/Classes/TelegramBot.php on line 71

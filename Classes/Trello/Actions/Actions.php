@@ -33,21 +33,13 @@ class Actions implements ActionInterface
         return TRELLO_KEY;
     }
 
-    protected static function prepareUrl(string $action, ?string $id, ?array $fields) : string
+    protected static function prepareUrl(string $action, ?string $id) : string
     {
-        $resultURL = empty($id) ?
+        return empty($id) ?
             $resultURL = self::getTrelloURL() . $action . '/?key=' . self::getKey() . '&token=' . self::getToken() :
             $resultURL = self::getTrelloURL() . $action . '/' . $id . '?key=' . self::getKey() . '&token=' . self::getToken();
-
-        if (!empty($fields)) {
-            foreach ($fields as $field => $value) {
-                $resultURL .= '&' . $field . '=' . urlencode($value);
-            }
-        }
-        return $resultURL;
     }
 
-    // TEST
     public static function getMemberShipsOfBoard($boardID)
     {
         $resultURL = self::getTrelloURL() . 'boards/' . $boardID . '/memberships?key=' . self::getKey() . '&token=' . self::getToken();
@@ -57,24 +49,28 @@ class Actions implements ActionInterface
 
     public static function get(string $action, string $id) : array
     {
-        $response = self::getHttpService()->get(self::prepareUrl($action, $id, null));
-        $response = $response->getBody()->getContents();
-        return is_string($response) ? json_decode($response, JSON_UNESCAPED_UNICODE) : [];
+        $response = self::getHttpService()->get(self::prepareUrl($action, $id));
+        $body = $response->getBody()->getContents();
+        return $response->getStatusCode() == 200 ? json_decode($body, JSON_UNESCAPED_UNICODE) : [];
     }
 
-    public static function update(string $action, string $id, ?array $fields)
+    public static function update(string $action, string $id, ?array $fields) : bool
     {
-        self::getHttpService()->put(self::prepareUrl($action, $id, $fields));
+         $result = isset($fields) ?
+            self::getHttpService()->put(self::prepareUrl($action, $id), ['json' => $fields]) :
+            self::getHttpService()->put(self::prepareUrl($action, $id));
+         return $result->getStatusCode() == 200 ? true : false;
     }
 
-    public static function delete(string $action, string $id)
+    public static function delete(string $action, string $id) : bool
     {
-        self::getHttpService()->delete(self::prepareUrl($action, $id, null));
+        $response = self::getHttpService()->delete(self::prepareUrl($action, $id));
+        return $response->getStatusCode() == 200 ? true : false;
     }
 
     public static function create(string $action, array $fields) : bool
     {
-        $response = self::getHttpService()->post(self::prepareUrl($action, null, $fields));
+        $response = self::getHttpService()->post(self::prepareUrl($action, null), ['json' => $fields]);
         $result = json_decode($response->getBody()->getContents(), JSON_UNESCAPED_UNICODE);
         return (bool) $result == null ? false : true;
     }

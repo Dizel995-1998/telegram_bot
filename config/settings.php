@@ -16,8 +16,8 @@ CONST DESCRIPTION_HOW_WORK_BOT_FOR_TESTERS =
     'за более подробной информацией о доступных командах бота вы можете использовать команду /getCommands';
 
 CONST DESCRIPTION_HOW_WORK_BOT_USERS =
-    'Заметили баг? Опишите баг и добавьте хэштэги #баг или #bug в описание, можете так-же добавлять скриншоты. ' .
-    'Если есть идея новой фичи которую вы хотите видеть, пишите #фича с описанием вашей идеи';
+    'Заметили баг? пишите #баг или #bug и описывайте баг, можете прикладывать к сообщению скришоты бага. ' .
+    'Есть идея для новой фичи? опишите фичу и добавьте в сообщение #фича';
 
 CONST TELEGRAM_COMMANDS_LIST =
     '#fixed - при ответе на сообщение с описанием бага отмечает баг как исправленный' . PHP_EOL .
@@ -34,7 +34,7 @@ CONST TRELLO_KEY = '010ef0062b53ab1e9b7ac112dca9f805';
 CONST TRELLO_TOKEN = 'af6ee7700002364f55f5224edaba230109d366cf22ef74e6c01621491d7b6953';
 
 CONST TRELLO_BOARD_FOR_WEB = '05ru Sprints';
-CONST TRELLO_COLUMN_FOR_WEB = 'Баги от бота';
+CONST TRELLO_COLUMN_FOR_WEB = 'Фидбэк Bot';
 
 CONST TRELLO_BOARD_FOR_ANDROID_IOS = 'Мобильное приложение';
 CONST TRELLO_COLUMN_FOR_ANDROID = 'Фидбэк Android';

@@ -23,10 +23,25 @@ $telegramFileID = $telegramBot->getFileId();
 $telegramMessageType = $telegramBot->getMessageType();
 
 if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID) {
+    if ($telegramBot->messageHas('~#(?<comm>баг|bug|фича)~', $matches)) {
+        $flag_feature = false;
+
+        if ($matches['comm'] == 'фича') {
+            $flag_feature = true;
+        }
+
+        $telegramBot->sendMessage($currentChatID, 'message', 'Ваше сообщение будет учтено');
+    }
+} else { // Если мы в группе тестировщиков и ПМщиков
+
+}
+
+if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID) {
+
     if ($telegramBot->messageHas('~#(баг|bug) (?<text>.+)~', $matches)) {
         $message = $matches['text'];
-        $telegramBot->sendMessage($currentChatID, 'message', 'Спасибо в содействии в улучшении сайта');
-        if (BugsManager::addRowToBugs($message, $telegramAuthor, $telegramMessageID, $currentChatID, $telegramMediaGroupID)) {
+        $telegramBot->sendMessage($currentChatID, 'message', 'Ваше сообщение будет учтено');
+        if (BugsManager::addRowToBugs($message, $telegramAuthor, $telegramMessageID, $currentChatID, false, $telegramMediaGroupID)) {
             $lastBugID = BugsManager::getLastBugID();
             $message = prepareMessage($telegramAuthor, $lastBugID, $message);
             if ($telegramMessageType != 'message') {
@@ -42,7 +57,7 @@ if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID) {
         }
     }
 
-    if ($telegramBot->messageHas('~#фича .+~')) {
+    if ($telegramBot->messageHas('~#фича~')) {
         $telegramBot->sendMessage(TELEGRAM_FEATURES_CHAT_ID, $telegramMessageType, $telegramMessageText, $telegramFileID);
     }
 
@@ -103,8 +118,6 @@ if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID) {
                     break;
             }
 
-
-
             $cardStatusText = Facade::createCard(
                 $trelloBoard, $trelloColumn, 'Баг №' . $bugID, $trelloMessage, 'top'
             ) ? 'Trello карта создана' : 'Не получилось создать Trello карту';
@@ -122,6 +135,12 @@ if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID) {
         $arBug = BugsManager::getAllInformationAboutBug($matches['id']);
         $telegramBot->answerOnMessageID($arBug['chat_id'], 'Баг был помечен как исправленный, спасибо за содействие в улучшении сайта', $arBug['message_id']);
         $telegramBot->sendMessage($currentChatID, 'message', $message);
+    }
+}
+
+if ($currentChatID == TELEGRAM_FEATURES_CHAT_ID) {
+    if ($telegramBot->messageHas('~#trello #фича')) {
+
     }
 }
 
