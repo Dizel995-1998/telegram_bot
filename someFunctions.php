@@ -15,12 +15,12 @@ function getExtensionFileByURL(string $url)
     return end($arUrl);
 }
 
-function prepareMessage(string $themeTopic, string $author, int $bugNumber, string $messageText) : string
+function prepareMessage(string $themeTopic, string $author, int $bugNumber, string $messageText, $stars = '*') : string
 {
     return
-         $themeTopic . ' №' . $bugNumber . PHP_EOL .
-        'Автор: ' . $author . PHP_EOL .
-        'Описание: ' . $messageText . PHP_EOL;
+        $stars . $themeTopic . ' №' . $bugNumber . $stars . PHP_EOL .
+        $stars . 'Автор: ' . $stars . $author . PHP_EOL .
+        $stars . 'Описание: ' . $stars . $messageText . PHP_EOL;
 }
 
 function downloadImage(string $linkForDownload, int $numberBug, string $fileID)

@@ -107,22 +107,25 @@ class TelegramBot
     }
 
 
-    public function sendMessage(string $chatID, string $messageType, string $messageText = null, string $fileID = null) : bool
+    public function sendMessage(string $chatID, string $messageType, string $messageText = null, string $replayToMessageID = null, string $fileID = null) : bool
     {
         if (!in_array($messageType, $this->allowFileType)) {
             throw new Exception('Dont supported this file type, see allow types');
         }
         $messageText = urlencode($messageText);
-        $url = $this->telegramUrl . 'bot' . $this->token . '/send' . ucfirst($messageType) . '?chat_id=' . $chatID;
+        $url = $this->telegramUrl . 'bot' . $this->token . '/send' . ucfirst($messageType) . '?chat_id=' . $chatID; // '&parse_mode=Markdown'; // . '&parse_mode=MarkdownV2'
         $url .= ($messageType != 'message' && isset($fileID)) ?
             '&' . $messageType . '=' . $fileID . '&caption=' . $messageText :
             '&text=' . $messageText;
+
+        $url .= isset($replayToMessageID) ? '&reply_to_message_id=' . $replayToMessageID : '';
 
         $response = $this->httpService->post($url);
         $arResponse = json_decode($response->getBody()->getContents(), JSON_UNESCAPED_UNICODE);
         $this->errorDescription = isset($arResponse['description']) ? $arResponse['description'] : " ";
         $this->errorCode = isset($arResponse['error_code']) ? $arResponse['error_code'] : 0;
-        return isset($arResponse['ok']) ? $arResponse['ok'] : false;
+        if ($this->errorCode != 0) Logger::writeLine('Не удалось отправить сообщение');
+        return isset($arResponse['ok']);
     }
 
     /**
@@ -150,10 +153,11 @@ class TelegramBot
      * @param $webHookURL
      * @throws GuzzleException
      */
-    public function setWebHook($webHookURL) : void
+    public function setWebHook($webHookURL)
     {
-        $this->httpService->request('GET',
+        $response = $this->httpService->request('GET',
             $this->telegramUrl . 'bot' . TELEGRAM_BOT_TOKEN . '/setWebHook?url='. $webHookURL);
+        return json_decode($response->getBody()->getContents(), JSON_UNESCAPED_UNICODE);
     }
 
     /**
@@ -236,7 +240,7 @@ class TelegramBot
     {
         $url =
             $this->telegramUrl . 'bot' . $this->token . '/sendMessage?chat_id=' . $chatID .
-            '&text=' . $answerText . '&reply_to_message_id=' . $replyToMessageID;
+            '&text=' . urlencode($answerText) . '&reply_to_message_id=' . $replyToMessageID;
         $response = $this->httpService->get($url);
         return $response->getStatusCode() == 200;
     }

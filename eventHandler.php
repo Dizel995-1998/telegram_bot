@@ -3,6 +3,7 @@
 use Core\BugsManager;
 use Core\Logger;
 use Core\TelegramBot;
+use Core\Trello\Board;
 use Core\Trello\Facade;
 use GuzzleHttp\Client;
 
@@ -23,33 +24,39 @@ $telegramFileID = $telegramBot->getFileId();
 $telegramMessageType = $telegramBot->getMessageType();
 
 if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID && $currentChatID != TELEGRAM_FEATURES_CHAT_ID) {
-
-    if ($telegramBot->messageHas('~#(?<comm>баг|bug|фича)~', $matches)) {
+    if ($telegramBot->messageHas('~^#(?<comm>баг|bug|фича)\s*(?<text>.*)~', $matches)) {
         $flag_feature = null;
         $themeTopic = 'Баг';
         $chatRedirect = TELEGRAM_TEST_GROUP_CHAT_ID;
+        $messageForUsers = 'Зафиксирован баг №';
 
         if ($matches['comm'] == 'фича') {
             $themeTopic = 'Фича';
             $chatRedirect = TELEGRAM_FEATURES_CHAT_ID;
             $flag_feature = true;
+            $messageForUsers = 'Зафиксирована фича №';
         }
 
-        $telegramBot->sendMessage($currentChatID, 'message', 'Ваше сообщение будет учтено');
-        $descriptionOfBugOrFeature = preg_replace('~#(баг|bug|фича)~', '', $telegramMessageText);
+        if (empty($matches['text'])) {
+            $telegramBot->sendMessage($currentChatID, 'message', 'Опишите баг после #баг или #bug');
+            die();
+        }
+
+        $descriptionOfBugOrFeature = $matches['text'];
 
         if (BugsManager::addRowToBugs($descriptionOfBugOrFeature, $telegramAuthor, $telegramMessageID, $currentChatID, $chatRedirect, $flag_feature, $telegramMediaGroupID)) {
             $lastBugID = BugsManager::getLastBugID();
-            $message = prepareMessage($themeTopic, $telegramAuthor, $lastBugID, $descriptionOfBugOrFeature);
+            $telegramBot->sendMessage($currentChatID, 'message', $messageForUsers . $lastBugID, $telegramMessageID);
+            $message = prepareMessage($themeTopic, $telegramAuthor, $lastBugID, $descriptionOfBugOrFeature, '');
             if ($telegramMessageType != 'message') {
                 downloadImage($telegramBot->getReferenceByFileID($telegramFileID), $lastBugID, $telegramFileID);
             }
-            $telegramBot->sendMessage($chatRedirect, $telegramMessageType, $message, $telegramFileID);
+            $telegramBot->sendMessage($chatRedirect, $telegramMessageType, $message, null, $telegramFileID);
             die();
         } else {
             // В любом случае пересылаем сообщение о баге тестировщикам и сообщаем им о проблеме
             Logger::writeLine('Не удалось записать сообщение в БД');
-            $telegramBot->sendMessage($chatRedirect, $telegramMessageType, $telegramMessageText, $telegramFileID);
+            $telegramBot->sendMessage($chatRedirect, $telegramMessageType, $telegramMessageText, null, $telegramFileID);
             $telegramBot->sendMessage($chatRedirect, 'message', 'Не удалось записать сообщение в БД, свяжитесь с разрабами');
         }
     }
@@ -59,7 +66,7 @@ if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID && $currentChatID != TELEGRAM_
         $lastBugID = BugsManager::getLastBugID();
         $arBug = BugsManager::getAllInformationAboutBug($lastBugID);
         if ($arBug['message_group_id'] == $telegramMediaGroupID) {
-            $telegramBot->sendMessage($arBug['redirect_chat_id'], $telegramMessageType, '', $telegramFileID);
+            $telegramBot->sendMessage($arBug['redirect_chat_id'], $telegramMessageType, '', null, $telegramFileID);
             downloadImage($telegramBot->getReferenceByFileID($telegramFileID), $lastBugID, $telegramFileID);
         }
     }
@@ -68,31 +75,46 @@ if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID && $currentChatID != TELEGRAM_
         $telegramBot->sendMessage($currentChatID, 'message', TELEGRAM_COMMANDS_LIST);
     }
 
-    if ($telegramBot->replyMessage() && $telegramBot->messageHas('~^#fixed~')) {
+    if ($telegramBot->replyMessage() && $telegramBot->messageHas('~^#fixed\s*(?<text>.*)~', $matchesText)) {
         if (preg_match('~Баг №(?<bug_id>\d+)~', $telegramBot->getReplyOriginText(), $matches)) {
             $arBug = BugsManager::getAllInformationAboutBug($matches['bug_id']);
-            $telegramBot->answerOnMessageID($arBug['chat_id'], TELEGRAM_ANSWER_ON_FIX_BUG, $arBug['message_id']);
+            $answerMessage = !empty($matchesText['text']) ?
+                TELEGRAM_ANSWER_ON_FIX_BUG . PHP_EOL . 'Сообщение от тестировщиков:' . PHP_EOL . $matchesText['text'] :
+                TELEGRAM_ANSWER_ON_FIX_BUG;
+
+            $telegramBot->answerOnMessageID($arBug['chat_id'], $answerMessage, $arBug['message_id']);
         } else {
             $telegramBot->sendMessage($currentChatID, 'message', 'Не удалось определелить ID бага, свяжитесь с разработчиками');
         }
     }
 
-    if ($telegramBot->replyMessage() && $telegramBot->messageHas('~#trello (?<chooseTrelloBoard>#android|#ios|#web|#фича)~', $matchesBoard)) {
+    if ($telegramBot->replyMessage() && $telegramBot->messageHas('~#trello (?<chooseTrelloBoard>#android|#ios|#web|#фича)\s*(?<text>.*)~', $matchesBoard)) {
         if (preg_match('~(?<theme>Баг|Фича) №(?<bug_id>\d+)~', $telegramBot->getReplyOriginText(), $matches)) {
             $themeTopic = $matches['theme'];
             $bugID = $matches['bug_id'];
+
+            Logger::writeData('Зафиксированно сообщение: ' . $matchesBoard['text']);
+
+            if (BugsManager::getFlagCreatedTrelloCard($bugID)) {
+                $telegramBot->sendMessage($currentChatID, 'message', 'Данная карточка уже существует');
+                die();
+            }
+
             $arInfoAboutBug = BugsManager::getAllInformationAboutBug($bugID);
             $linksToFiles = BugsManager::getPathToFilesByBugID($bugID);
             $trelloMessage = prepareMessage(
                     $themeTopic,
                     (string) $arInfoAboutBug['bug_author'],
-                    (int) $bugID, (string) $arInfoAboutBug['bug_description']) .
-                'Файлы прикреплённые к сообщению:' . PHP_EOL;
+                    (int) $bugID,
+                    (string) $arInfoAboutBug['bug_description'], '**');
+
+            $trelloMessage .= !empty($linksToFiles) ? '**Файлы прикрепленные к сообщению:**' . PHP_EOL : '';
 
             foreach ($linksToFiles as $filePath) {
                 $trelloMessage .= OUR_DOMAIN . $filePath . PHP_EOL;
             }
 
+            $trelloMessage .= empty($matchesBoard['text']) ? '' : '**Сообщение от тестировщиков:** ' . $matchesBoard['text'];
             $trelloBoard = '';
             $trelloColumn = '';
 
@@ -118,22 +140,46 @@ if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID && $currentChatID != TELEGRAM_
                     break;
             }
 
+            $cardName = $themeTopic . ' №' . $bugID . ' ' . (string) mb_substr($arInfoAboutBug['bug_description'], 0, 50);
+
             $cardStatusText = Facade::createCard(
-                $trelloBoard, $trelloColumn,$themeTopic . ' №' . $bugID, $trelloMessage, 'top'
+                $trelloBoard, $trelloColumn, $cardName, $trelloMessage, 'top'
             ) ? 'Trello карта создана' : 'Не получилось создать Trello карту';
 
+            if (!Facade::addLabelOnCard($trelloBoard, $cardName, $themeTopic)) {
+                Logger::writeLine('Не удалось проставить метку на карточку с багом/фичей');
+            }
+
+            if ($cardStatusText == 'Trello карта создана') {
+                BugsManager::setFlagCreatedTrelloCard($bugID);
+            }
             $telegramBot->sendMessage($currentChatID, 'message', $cardStatusText);
         } else {
             $telegramBot->sendMessage($currentChatID, 'message', 'Не удалось определелить ID бага, свяжитесь с разработчиками');
         }
     }
 
-    if ($telegramBot->messageHas('~^/fixBug (?<id>\d+)~', $matches)) {
-        $message = BugsManager::bugFix($matches['id']) ?
-            'Баг с ID ' . $matches['id'] . ' был помечен как исправленный' :
-            '[ERROR] Сообщение о исправлении бага было отправлено пользователю, но не удалось изменить статус бага в БД';
+    if ($telegramBot->messageHas('~^/fixBug (?<id>\d+)\s*(?<text>.*)~', $matches)) {
         $arBug = BugsManager::getAllInformationAboutBug($matches['id']);
-        $telegramBot->answerOnMessageID($arBug['chat_id'], 'Баг был помечен как исправленный, спасибо за содействие в улучшении сайта', $arBug['message_id']);
+
+        if (empty($arBug)) {
+            $telegramBot->sendMessage($currentChatID, 'message', 'Не удалось найти данный баг в БД');
+            die();
+        }
+
+        if ($arBug['bug_fix']) {
+            $telegramBot->sendMessage($currentChatID, 'message', 'Данный баг помечен как уже исправленный');
+            die();
+        }
+
+        $message = BugsManager::bugFix($matches['id']) ?
+            'Баг с ID ' . $matches['id'] . ' переведён в статус исправленных' :
+            '[ERROR] Сообщение о исправлении бага было отправлено пользователю, но не удалось изменить статус бага в БД';
+
+        $answerMessage = 'Данный баг был исправлен';
+        $answerMessage .= empty($matches['text']) ? '' : PHP_EOL . '**Сообщение от тестировщиков:** ' . $matches['text'];
+
+        $telegramBot->answerOnMessageID($arBug['chat_id'], $answerMessage, $arBug['message_id']);
         $telegramBot->sendMessage($currentChatID, 'message', $message);
     }
 }
@@ -142,9 +188,18 @@ if ($telegramBot->messageHas('~/getChatID~')) {
     $telegramBot->sendMessage($currentChatID, 'message', 'ChatID: ' . $currentChatID);
 }
 
-if ($telegramBot->messageHas('~/help~')) {
+if ($telegramBot->messageHas('~^/help~')) {
+    Logger::writeLine('попали в Help');
     $message = $currentChatID == TELEGRAM_TEST_GROUP_CHAT_ID || $currentChatID == TELEGRAM_FEATURES_CHAT_ID ?
         DESCRIPTION_HOW_WORK_BOT_FOR_TESTERS : DESCRIPTION_HOW_WORK_BOT_USERS;
 
+    Logger::writeLine($message);
     $telegramBot->sendMessage($currentChatID, 'message', $message);
+}
+
+if ($telegramBot->messageHas('~#getMessageID~')) {
+    $telegramBot->sendMessage($currentChatID, 'message', 'MessageID: ' . $telegramMessageID);
+    if ($telegramMessageType != 'message') {
+        $telegramBot->sendMessage($currentChatID, 'message', 'fileID: ' . $telegramFileID);
+    }
 }

@@ -12,4 +12,12 @@ class Facade
         $idList = Board::getListIDbyListName($boardID, $listName);
         return Card::createCard($idList, $cardName, $cardDescription, $cardPosition);
     }
+
+    public static function addLabelOnCard(string $boardName, string $cardName, string $labelName) : bool
+    {
+        $boardID = Board::getBoardID($boardName);
+        $cardID = Board::getCardIDbyCardName($boardID, $cardName);
+        $labelID = Board::getLabelIDbyLabelName($boardID, $labelName);
+        return Card::setLabelOnCard($cardID, $labelID);
+    }
 }

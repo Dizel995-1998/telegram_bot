@@ -15,7 +15,7 @@ class Board
 
     public static function getBoardID(string $boardName) : string
     {
-        return self::getBoardIDbyBoardName($boardName)['id'] ?? '';
+        return self::getBoardByBoardName($boardName)['id'] ?? '';
     }
 
     /**
@@ -23,7 +23,7 @@ class Board
      * @param string $boardName - название доски которую нужно найти
      * @return array
      */
-    public static function getBoardIDbyBoardName(string $boardName) : array
+    public static function getBoardByBoardName(string $boardName) : array
     {
         $arResult = [];
         $arBoards = self::getBoardCollection();
@@ -68,4 +68,41 @@ class Board
         }
         return $arResult;
     }
+
+    public static function getLabelsCollection(string $boardID): array
+    {
+        return Actions::get(self::ACTIONS, $boardID . '/labels');
+    }
+
+    public static function getLabelIDbyLabelName(string $boardID, string $labelName) : string
+    {
+        $labelID = '';
+        $arLists = self::getLabelsCollection($boardID);
+        foreach ($arLists as $list) {
+            if ($list['name'] == $labelName) {
+                $labelID = $list['id'];
+                break;
+            }
+        }
+        return $labelID;
+    }
+
+    public static function getCardsCollection(string $boardID) : array
+    {
+        return Actions::get(self::ACTIONS, $boardID . '/cards');
+    }
+
+    public static function getCardIDbyCardName(string $boardID, string $cardName) : string
+    {
+        $cardID = '';
+        $arCardsCollection = self::getCardsCollection($boardID);
+        foreach ($arCardsCollection as $item) {
+            if ($cardName == $item['name']) {
+                $cardID = $item['id'];
+                break;
+            }
+        }
+        return $cardID;
+    }
+
 }

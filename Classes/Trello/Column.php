@@ -47,6 +47,6 @@ class Column
 
     public static function createList(string $name, string $idBoard)
     {
-        Actions::create(self::ACTION, ['name' => $name, 'idBoard' => $idBoard]);
+        Actions::create(self::ACTION, null, ['name' => $name, 'idBoard' => $idBoard]);
     }
 }

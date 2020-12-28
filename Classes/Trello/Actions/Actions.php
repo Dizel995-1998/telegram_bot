@@ -6,7 +6,7 @@ namespace Core\Trello\Actions;
 use Core\Logger;
 use GuzzleHttp\Client;
 
-class Actions implements ActionInterface
+class Actions //implements ActionInterface
 {
     protected static $httpService = null;
 
@@ -68,9 +68,9 @@ class Actions implements ActionInterface
         return $response->getStatusCode() == 200 ? true : false;
     }
 
-    public static function create(string $action, array $fields) : bool
+    public static function create(string $action, ?string $id, array $fields) : bool
     {
-        $response = self::getHttpService()->post(self::prepareUrl($action, null), ['json' => $fields]);
+        $response = self::getHttpService()->post(self::prepareUrl($action, $id), ['json' => $fields]);
         $result = json_decode($response->getBody()->getContents(), JSON_UNESCAPED_UNICODE);
         return (bool) $result == null ? false : true;
     }

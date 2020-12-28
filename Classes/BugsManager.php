@@ -127,10 +127,20 @@ class BugsManager
             'SELECT * FROM bugs WHERE bug_id = :bug_id');
         $obResult->execute([':bug_id' => $bugID]);
         $result = $obResult->fetch(\PDO::FETCH_ASSOC);
-        if (is_bool($result)) {
-            return [];
-        } else {
-            return $result;
-        }
+        return is_bool($result) ? [] : $result;
+    }
+
+    public static function setFlagCreatedTrelloCard(int $bugID) : bool
+    {
+        return self::getPDOconnection()
+            ->prepare('UPDATE bugs SET created_trello_card = 1 WHERE bug_id = :bug_id')
+            ->execute([':bug_id' => $bugID]);
+    }
+
+    public static function getFlagCreatedTrelloCard(int $bugID) : bool
+    {
+        $stmt = self::getPDOconnection()->prepare('SELECT created_trello_card FROM bugs WHERE bug_id = :bug_id');
+        $stmt->execute([':bug_id' => $bugID]);
+        return (bool) $stmt->fetch(\PDO::FETCH_COLUMN);
     }
 }
