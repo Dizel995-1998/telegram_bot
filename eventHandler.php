@@ -1,11 +1,9 @@
 <?php
 
-use Core\BugsManager;
-use Core\Logger;
-use Core\TelegramBot;
-use Core\Trello\Board;
-use Core\Trello\Facade;
-use GuzzleHttp\Client;
+use Core\BugsManager,
+    Core\TelegramBot,
+    Core\Trello\Facade,
+    GuzzleHttp\Client;
 
 require_once 'vendor/autoload.php';
 require_once 'someFunctions.php';
@@ -194,12 +192,4 @@ if ($telegramBot->messageHas('~^/help~')) {
         TELEGRAM_COMMANDS_LIST : DESCRIPTION_HOW_WORK_BOT_USERS;
 
     $telegramBot->sendMessage($currentChatID, 'message', $message);
-}
-
-if ($telegramBot->messageHas('~#getMessageID~')) {
-    $telegramBot->sendMessage($currentChatID, 'message', 'MessageID: ' . $telegramMessageID);
-
-    if ($telegramMessageType != 'message') {
-        $telegramBot->sendMessage($currentChatID, 'message', 'fileID: ' . $telegramFileID);
-    }
 }
