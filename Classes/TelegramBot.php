@@ -8,22 +8,22 @@ use GuzzleHttp\Exception\GuzzleException;
 
 class TelegramBot
 {
-    private array $allowFileType = ["document", "video", "audio", "photo", "message"];
-    private string $token;
-    private string $telegramUrl = 'https://api.telegram.org/';
-    private string $textMessage;
-    private string $messageID;
-    private string $fileId;
-    private string $chatId;
-    private string $userName;
-    private string $messageType = "message"; // избавиться от инициализации
-    private bool $replyMessageFlag = false;
-    private string $replyMessageText;
-    private string $replyMessageID;
-    private int $errorCode;
-    private string $errorDescription;
-    private string $mediaGroupID;
-    private Client $httpService;
+    private $allowFileType = ["document", "video", "audio", "photo", "message"];
+    private $token;
+    private $telegramUrl = 'https://api.telegram.org/';
+    private $textMessage;
+    private $messageID;
+    private $fileId;
+    private $chatId;
+    private $userName;
+    private $messageType = "message"; // избавиться от инициализации
+    private $replyMessageFlag = false;
+    private $replyMessageText;
+    private $replyMessageID;
+    private $errorCode;
+    private $errorDescription;
+    private $mediaGroupID;
+    private $httpService;
 
     public function __construct($token, $incomingData, Client $httpService)
     {

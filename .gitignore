@@ -1,1 +1,7 @@
-
+config/*
+vendor/*
+upload/*
+.idea/*
+logger.txt
+logs.txt
+.Trash-1000/*

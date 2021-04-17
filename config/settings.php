@@ -2,9 +2,9 @@
 
 /* Настройки подключения к БД */
 CONST DB_DBNAME = 'telegram_bot';
-CONST DB_USER = 'root';
-CONST DB_PASSWORD = 'root';
-CONST DB_HOST = 'localhost';
+CONST DB_USER = 'user_05ru';
+CONST DB_PASSWORD = 'KtXPCMcz';
+CONST DB_HOST = '127.0.0.1';
 
 /* Настройки телеграм бота */
 CONST TELEGRAM_BOT_TOKEN = '1104270168:AAHwi4nX3QKeUSd6ERCL-Aa7mLWXUYOXmiU';
@@ -42,10 +42,13 @@ CONST TRELLO_COLUMN_FOR_ANDROID = 'Фидбэк Android';
 CONST TRELLO_COLUMN_FOR_IOS = 'Фидбэк IOS';
 CONST TRELLO_COLUMN_FOR_FEATURES = 'Бэклог. Требует обсуждения';
 
+CONST TRELLO_BOARD_FOR_MARKETPLACE = 'Маркетплейс 05.ru';
+CONST TRELLO_COLUMN_FOR_MARKETPLACE = 'Фидбэк от бота';
+
 /* Настройка логгер файла */
 CONST LOGGER_FILE = 'logger.txt';
 
 /* Настройка загрузки файлов приекреплённых к багам ( могут не работать документы и видео ) */
 CONST DOWNLOAD_DIRECTORY = 'upload/';
-CONST OUR_DOMAIN = 'https://test.linux-electronics.ru/';
+CONST OUR_DOMAIN = 'https://test.05.ru/tg/' . DOWNLOAD_DIRECTORY;
 

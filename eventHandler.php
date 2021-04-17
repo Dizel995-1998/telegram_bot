@@ -24,11 +24,13 @@ $telegramFileID = $telegramBot->getFileId();
 $telegramMessageType = $telegramBot->getMessageType();
 
 if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID && $currentChatID != TELEGRAM_FEATURES_CHAT_ID) {
-    if ($telegramBot->messageHas('~^#(?<comm>баг|bug|фича)\s*(?<text>.*)~', $matches)) {
+    if ($telegramBot->messageHas('~^#(?<comm>баг|bug|фича)\s*(?<text>.*)~iu', $matches)) {
         $flag_feature = null;
         $themeTopic = 'Баг';
         $chatRedirect = TELEGRAM_TEST_GROUP_CHAT_ID;
         $messageForUsers = 'Зафиксирован баг №';
+
+        $matches['comm'] = mb_strtolower($matches['comm']);
 
         if ($matches['comm'] == 'фича') {
             $themeTopic = 'Фича';
@@ -38,7 +40,7 @@ if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID && $currentChatID != TELEGRAM_
         }
 
         if (empty($matches['text'])) {
-            $telegramBot->sendMessage($currentChatID, 'message', 'Опишите баг после #баг или #bug');
+            $telegramBot->sendMessage($currentChatID, 'message', 'Опишите баг или фичу после соответвующих хештегов #баг, #bug или #фича');
             die();
         }
 
@@ -70,7 +72,7 @@ if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID && $currentChatID != TELEGRAM_
             downloadImage($telegramBot->getReferenceByFileID($telegramFileID), $lastBugID, $telegramFileID);
         }
     }
-} else { // ЕСЛИ МЫ В ГРУППЕ ТЕСТИРОВЩИКОВ
+} else { // ЕСЛИ МЫ В ГРУППЕ ОБЫЧНЫХ ПОЛЬЗОВАТЕЛЕЙ
     if ($telegramBot->messageHas('~^/getCommands~')) {
         $telegramBot->sendMessage($currentChatID, 'message', TELEGRAM_COMMANDS_LIST);
     }
@@ -88,7 +90,8 @@ if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID && $currentChatID != TELEGRAM_
         }
     }
 
-    if ($telegramBot->replyMessage() && $telegramBot->messageHas('~#trello (?<chooseTrelloBoard>#android|#ios|#web|#фича)\s*(?<text>.*)~', $matchesBoard)) {
+
+    if ($telegramBot->replyMessage() && $telegramBot->messageHas('~(#trello|#трелло) (?<chooseTrelloBoard>#android|#ios|#web|#фича|#маркетплейс)\s*(?<text>.*)~ui', $matchesBoard)) {
         if (preg_match('~(?<theme>Баг|Фича) №(?<bug_id>\d+)~', $telegramBot->getReplyOriginText(), $matches)) {
             $themeTopic = $matches['theme'];
             $bugID = $matches['bug_id'];
@@ -114,9 +117,10 @@ if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID && $currentChatID != TELEGRAM_
                 $trelloMessage .= OUR_DOMAIN . $filePath . PHP_EOL;
             }
 
-            $trelloMessage .= empty($matchesBoard['text']) ? '' : '**Сообщение от тестировщиков:** ' . $matchesBoard['text'];
+            $trelloMessage .= empty($matchesBoard['text']) ? '' : 'Сообщение от тестировщиков: ' . $matchesBoard['text'];
             $trelloBoard = '';
             $trelloColumn = '';
+            $matchesBoard['chooseTrelloBoard'] = mb_strtolower($matchesBoard['chooseTrelloBoard']);
 
             switch ($matchesBoard['chooseTrelloBoard']) {
                 case '#ios':
@@ -137,6 +141,11 @@ if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID && $currentChatID != TELEGRAM_
                 case '#фича':
                     $trelloBoard = TRELLO_BOARD_FOR_WEB;
                     $trelloColumn = TRELLO_COLUMN_FOR_FEATURES;
+                    break;
+
+                case '#маркетплейс':
+                    $trelloBoard = TRELLO_BOARD_FOR_MARKETPLACE;
+                    $trelloColumn = TRELLO_COLUMN_FOR_MARKETPLACE;
                     break;
             }
 

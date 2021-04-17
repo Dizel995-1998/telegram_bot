@@ -9,7 +9,7 @@ class BugsManager
     protected static function getPDOconnection()
     {
         if (self::$pdo == null) {
-            self::$pdo = new \PDO('mysql:host=' . 'localhost' . ';charset=UTF8;dbname=' . 'telegram_bot', 'root', 'root');
+            self::$pdo = new \PDO('mysql:host=' . DB_HOST . ';charset=UTF8;dbname=' . DB_DBNAME , DB_USER, DB_PASSWORD);
         }
         return self::$pdo;
     }
