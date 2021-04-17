@@ -1,18 +1,31 @@
 <?php
 
-
 use Core\BugsManager;
 use Core\Logger;
 
+/**
+ * Загружает файл по ссылке в директорию filePath с названием файла fileName
+ * @param string $url
+ * @param string $filePath
+ * @param string $fileName
+ */
 function downloadFile(string $url, string $filePath, string $fileName)
 {
-    return (bool) file_put_contents($filePath . $fileName, file_get_contents($url));
+    if (!is_dir($filePath)) {
+        throw new RuntimeException(sprintf('This is not directory %s', $filePath));
+    }
+
+    if (!is_writable($filePath)) {
+        throw new RuntimeException(sprintf('Don\'t have enough rights for write to this directory %s', $filePath));
+    }
+
+    file_put_contents($filePath . $fileName, file_get_contents($url));
 }
 
 function getExtensionFileByURL(string $url)
 {
-    $arUrl = explode('.', basename($url));
-    return end($arUrl);
+    $arTmp = explode('.', $url);
+    return end($arTmp);
 }
 
 function prepareMessage(string $themeTopic, string $author, int $bugNumber, string $messageText, $stars = '*') : string
@@ -23,6 +36,9 @@ function prepareMessage(string $themeTopic, string $author, int $bugNumber, stri
         $stars . 'Описание: ' . $stars . $messageText . PHP_EOL;
 }
 
+/**
+ * НАРУШЕНИЕ SOLID'a
+ */
 function downloadImage(string $linkForDownload, int $numberBug, string $fileID)
 {
     $extensionFile = getExtensionFileByURL($linkForDownload);
