@@ -140,7 +140,6 @@ class TelegramBot
         $arResponse = json_decode($response->getBody()->getContents(), JSON_UNESCAPED_UNICODE);
         $this->errorDescription = $arResponse['description'] ?? " ";
         $this->errorCode = $arResponse['error_code'] ?? 0;
-        if ($this->errorCode != 0) Logger::writeLine('Не удалось отправить сообщение');
         return isset($arResponse['ok']);
     }
 

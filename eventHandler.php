@@ -50,14 +50,15 @@ if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID && $currentChatID != TELEGRAM_
             $lastBugID = BugsManager::getLastBugID();
             $telegramBot->sendMessage($currentChatID, 'message', $messageForUsers . $lastBugID, $telegramMessageID);
             $message = prepareMessage($themeTopic, $telegramAuthor, $lastBugID, $descriptionOfBugOrFeature, '');
+
             if ($telegramMessageType != 'message') {
                 downloadImage($telegramBot->getReferenceByFileID($telegramFileID), $lastBugID, $telegramFileID);
             }
+
             $telegramBot->sendMessage($chatRedirect, $telegramMessageType, $message, null, $telegramFileID);
             die();
         } else {
             // В любом случае пересылаем сообщение о баге тестировщикам и сообщаем им о проблеме
-            Logger::writeLine('Не удалось записать сообщение в БД');
             $telegramBot->sendMessage($chatRedirect, $telegramMessageType, $telegramMessageText, null, $telegramFileID);
             $telegramBot->sendMessage($chatRedirect, 'message', 'Не удалось записать сообщение в БД, свяжитесь с разрабами');
         }
@@ -72,11 +73,7 @@ if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID && $currentChatID != TELEGRAM_
             downloadImage($telegramBot->getReferenceByFileID($telegramFileID), $lastBugID, $telegramFileID);
         }
     }
-} else { // ЕСЛИ МЫ В ГРУППЕ ОБЫЧНЫХ ПОЛЬЗОВАТЕЛЕЙ
-    if ($telegramBot->messageHas('~^/getCommands~')) {
-        $telegramBot->sendMessage($currentChatID, 'message', TELEGRAM_COMMANDS_LIST);
-    }
-
+} else { /** Если мы в чате тестировщиков */
     if ($telegramBot->replyMessage() && $telegramBot->messageHas('~^#fixed\s*(?<text>.*)~', $matchesText)) {
         if (preg_match('~Баг №(?<bug_id>\d+)~', $telegramBot->getReplyOriginText(), $matches)) {
             $arBug = BugsManager::getAllInformationAboutBug($matches['bug_id']);
@@ -90,13 +87,10 @@ if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID && $currentChatID != TELEGRAM_
         }
     }
 
-
     if ($telegramBot->replyMessage() && $telegramBot->messageHas('~(#trello|#трелло) (?<chooseTrelloBoard>#android|#ios|#web|#фича|#маркетплейс)\s*(?<text>.*)~ui', $matchesBoard)) {
         if (preg_match('~(?<theme>Баг|Фича) №(?<bug_id>\d+)~', $telegramBot->getReplyOriginText(), $matches)) {
             $themeTopic = $matches['theme'];
             $bugID = $matches['bug_id'];
-
-            Logger::writeData('Зафиксированно сообщение: ' . $matchesBoard['text']);
 
             if (BugsManager::getFlagCreatedTrelloCard($bugID)) {
                 $telegramBot->sendMessage($currentChatID, 'message', 'Данная карточка уже существует');
@@ -155,9 +149,7 @@ if ($currentChatID != TELEGRAM_TEST_GROUP_CHAT_ID && $currentChatID != TELEGRAM_
                 $trelloBoard, $trelloColumn, $cardName, $trelloMessage, 'top'
             ) ? 'Trello карта создана' : 'Не получилось создать Trello карту';
 
-            if (!Facade::addLabelOnCard($trelloBoard, $cardName, $themeTopic)) {
-                Logger::writeLine('Не удалось проставить метку на карточку с багом/фичей');
-            }
+            Facade::addLabelOnCard($trelloBoard, $cardName, $themeTopic);
 
             if ($cardStatusText == 'Trello карта создана') {
                 BugsManager::setFlagCreatedTrelloCard($bugID);
@@ -198,16 +190,15 @@ if ($telegramBot->messageHas('~/getChatID~')) {
 }
 
 if ($telegramBot->messageHas('~^/help~')) {
-    Logger::writeLine('попали в Help');
     $message = $currentChatID == TELEGRAM_TEST_GROUP_CHAT_ID || $currentChatID == TELEGRAM_FEATURES_CHAT_ID ?
-        DESCRIPTION_HOW_WORK_BOT_FOR_TESTERS : DESCRIPTION_HOW_WORK_BOT_USERS;
+        TELEGRAM_COMMANDS_LIST : DESCRIPTION_HOW_WORK_BOT_USERS;
 
-    Logger::writeLine($message);
     $telegramBot->sendMessage($currentChatID, 'message', $message);
 }
 
 if ($telegramBot->messageHas('~#getMessageID~')) {
     $telegramBot->sendMessage($currentChatID, 'message', 'MessageID: ' . $telegramMessageID);
+
     if ($telegramMessageType != 'message') {
         $telegramBot->sendMessage($currentChatID, 'message', 'fileID: ' . $telegramFileID);
     }
