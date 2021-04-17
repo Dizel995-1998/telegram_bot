@@ -8,7 +8,14 @@ use GuzzleHttp\Exception\GuzzleException;
 
 class TelegramBot
 {
-    private $allowFileType = ["document", "video", "audio", "photo", "message"];
+    private $allowFileType = [
+        "document",
+        "video",
+        "audio",
+        "photo",
+        "message"
+    ];
+
     private $token;
     private $telegramUrl = 'https://api.telegram.org/';
     private $textMessage;
@@ -25,55 +32,55 @@ class TelegramBot
     private $mediaGroupID;
     private $httpService;
 
-    public function __construct($token, $incomingData, Client $httpService)
+    /**
+     * @throws Exception if incoming json is empty
+     */
+    public function __construct(string $token, string $incomingData, Client $httpService)
     {
+        $incomingData = json_decode($incomingData, JSON_UNESCAPED_UNICODE);
+
+        if (empty($incomingData)) {
+            throw new Exception('Empty json from telegram server');
+        }
+
         $this->token = $token;
         $this->httpService = $httpService;
+        $this->userName = $incomingData['message']['from']['first_name'] ?? '';
+        $this->chatId = isset($incomingData['message']['chat']['id']) ? (string) $incomingData['message']['chat']['id'] : '';
+        $this->textMessage = $incomingData['message']['text'] ?? '';
+        $this->textMessage = $incomingData['message']['caption'] ?? $this->textMessage;
+        $this->messageID = isset($incomingData['message']['message_id']) ? (string) $incomingData['message']['message_id'] : '';
+        $this->replyMessageFlag = isset($incomingData['message']['reply_to_message']);
 
-        $incomingData = json_decode($incomingData, JSON_UNESCAPED_UNICODE);
-        //Logger::writeData($incomingData, 2);
-        //Logger::writeLine('------------------------------------------------');
-        /* Получение данных из телеграмм сообщения */
-        if (!empty($incomingData)) {
-            $this->userName = isset($incomingData['message']['from']['first_name']) ?
-                $incomingData['message']['from']['first_name'] : ' ';
-            $this->chatId = isset($incomingData['message']['chat']['id']) ?
-                (string) $incomingData['message']['chat']['id'] : " ";
-            $this->textMessage = isset($incomingData['message']['text']) ?
-                $incomingData['message']['text'] : " ";
-            $this->textMessage = isset($incomingData['message']['caption']) ?
-                $incomingData['message']['caption'] : $this->textMessage;
-            $this->messageID = isset($incomingData['message']['message_id']) ?
-                (string) $incomingData['message']['message_id'] : " ";
-            $this->replyMessageFlag = isset($incomingData['message']['reply_to_message']);
-            if ($this->replyMessageFlag) {
-                $this->replyMessageID = isset($incomingData['message']['reply_to_message']['message_id']) ?
-                   $incomingData['message']['reply_to_message']['message_id'] : " ";
-                $this->replyMessageText = isset($incomingData['message']['reply_to_message']['text']) ?
-                    (string) $incomingData['message']['reply_to_message']['text'] :
-                    (string) $incomingData['message']['reply_to_message']['caption'];
+        if ($this->replyMessageFlag) {
+            $this->replyMessageID = $incomingData['message']['reply_to_message']['message_id'] ?? '';
+            $this->replyMessageText = (string) isset($incomingData['message']['reply_to_message']['text']) ?
+                $incomingData['message']['reply_to_message']['text'] :
+                $incomingData['message']['reply_to_message']['caption'];
+        }
+
+        foreach ($this->allowFileType as $type) {
+            if (isset($incomingData["message"][$type])) {
+                $this->messageType = $type;
+                break;
             }
+        }
 
-            foreach ($this->allowFileType as $type) {
-                if (isset($incomingData["message"][$type])) {
-                    $this->messageType = $type;
-                    break;
-                }
-            }
+        $this->mediaGroupID = $incomingData['message']['media_group_id'] ?? 0;
 
-            $this->mediaGroupID = isset($incomingData['message']['media_group_id']) ?
-                $incomingData['message']['media_group_id'] : '0';
-
-            if ($this->messageType == "photo") {
-                $maxQualityPhotoIndex = count($incomingData["message"]["photo"])-1;
-                $this->fileId = (string) $incomingData["message"]["photo"][(string) $maxQualityPhotoIndex]["file_id"];
-            } else {
-                $this->fileId = (string) $incomingData["message"][(string) $this->messageType]["file_id"];
-            }
+        if ($this->messageType == "photo") {
+            $maxQualityPhotoIndex = count($incomingData["message"]["photo"])-1;
+            $this->fileId = (string) $incomingData["message"]["photo"][(string) $maxQualityPhotoIndex]["file_id"];
+        } else {
+            $this->fileId = (string) $incomingData["message"][(string) $this->messageType]["file_id"];
         }
     }
 
-
+    /**
+     * Возвращает идентификатор группового сообщения
+     * ( если сообщение было составным, специфика телеги - дробление сообщения с несколькими файлами на несколько сообщений)
+     * @return mixed|string
+     */
     public function getMediaGroupID()
     {
         return $this->mediaGroupID;
@@ -99,14 +106,23 @@ class TelegramBot
 
     /**
      * @description Возвращает ID сообщения на которое ссылается текущее сообщение
-     * @return int
+     * @return string
      */
     public function getReplyMessageID() : string
     {
         return (string) $this->replyMessageID;
     }
 
-
+    /**
+     * Отправить сообщение
+     * @param string $chatID идентификатор чата куда будет отправлено сообщение
+     * @param string $messageType тип сообщения, текст, аудио, видео, документ и т.д
+     * @param string|null $messageText текст сообщения
+     * @param string|null $replayToMessageID идентификатор сообщения на которое данное сообщение будет отвечать
+     * @param string|null $fileID идентификатор файла если мы прикрепляем файл
+     * @return bool true в случае успешной отправки
+     * @throws GuzzleException
+     */
     public function sendMessage(string $chatID, string $messageType, string $messageText = null, string $replayToMessageID = null, string $fileID = null) : bool
     {
         if (!in_array($messageType, $this->allowFileType)) {
@@ -122,13 +138,14 @@ class TelegramBot
 
         $response = $this->httpService->post($url);
         $arResponse = json_decode($response->getBody()->getContents(), JSON_UNESCAPED_UNICODE);
-        $this->errorDescription = isset($arResponse['description']) ? $arResponse['description'] : " ";
-        $this->errorCode = isset($arResponse['error_code']) ? $arResponse['error_code'] : 0;
+        $this->errorDescription = $arResponse['description'] ?? " ";
+        $this->errorCode = $arResponse['error_code'] ?? 0;
         if ($this->errorCode != 0) Logger::writeLine('Не удалось отправить сообщение');
         return isset($arResponse['ok']);
     }
 
     /**
+     * Возвращает идентификатор пользовательского сообщения
      * @return string
      */
     public function getMessageID() : string
@@ -151,6 +168,7 @@ class TelegramBot
     /**
      * Устанавливает WebHook на URL переданный в аргументах
      * @param $webHookURL
+     * @return mixed
      * @throws GuzzleException
      */
     public function setWebHook($webHookURL)
@@ -161,6 +179,7 @@ class TelegramBot
     }
 
     /**
+     * Возвращает ID чата в котором пришло сообщение
      * @return string
      */
     public function getChatId() : string
@@ -169,6 +188,7 @@ class TelegramBot
     }
 
     /**
+     * Возвращает ID файла пользовательского файла
      * @return string
      */
     public function getFileId() : string
@@ -209,7 +229,7 @@ class TelegramBot
      */
     public function getErrorCode() : int
     {
-        return empty($this->errorCode) ? 0 : $this->errorCode ;
+        return empty($this->errorCode) ? 0 : $this->errorCode;
     }
     
     /**
@@ -222,20 +242,34 @@ class TelegramBot
     }
 
 
-    public function getReferenceByFileID(string $fileID) : string
+    /**
+     * Получить URL на файл с сервера телеграмма по его ID
+     * @param string $fileID
+     * @return string|null
+     * @throws GuzzleException
+     */
+    public function getReferenceByFileID(string $fileID) : ?string
     {
+        $result = null;
         $url = $this->telegramUrl . 'bot' . $this->token .'/getFile?file_id=' . $fileID;
         $response = $this->httpService->get($url);
+
         if ($response->getStatusCode() == 200) {
             $response = json_decode($response->getBody()->getContents(), JSON_UNESCAPED_UNICODE);
             $result = $this->telegramUrl . 'file/bot' . $this->token . '/' . $response['result']['file_path'];
-        } else {
-            $result = "";
         }
+
         return $result;
     }
 
-
+    /**
+     * Ответ на сообщение
+     * @param string $chatID - идентификатор чата в котором необходимо ответить
+     * @param string $answerText - текст с ответом
+     * @param string $replyToMessageID - сообщение на которое нужно ответить
+     * @return bool
+     * @throws GuzzleException
+     */
     public function answerOnMessageID(string $chatID, string $answerText, string $replyToMessageID) : bool
     {
         $url =
@@ -245,27 +279,17 @@ class TelegramBot
         return $response->getStatusCode() == 200;
     }
 
+    /**
+     * Пересылает сообщение из одного чата в другой чат
+     * @param string $targetChatID - чат куда будет отправлено сообщение
+     * @param string $fromChatID - исходный чат откуда будет отправлено сообщение
+     * @param string $messageID - идентификатор сообщения который будет переправлен в чат targetChatID
+     * @throws GuzzleException
+     */
     public function forwardMessage(string $targetChatID, string $fromChatID, string $messageID)
     {
         $url = $this->telegramUrl . 'bot' . $this->token . '/forwardMessage?chat_id=' . $targetChatID .
             '&from_chat_id=' . $fromChatID . '&message_id=' . $messageID;
         $this->httpService->get($url);
-    }
-
-    public function sendMediaPhoto(string $chatID, array $photosFileID, string $text)
-    {
-        $photo = '';
-
-        for ($i = 0; $i < count($photosFileID); $i++) {
-            $photo .= json_encode(['type' => 'photo', 'media' => $photosFileID[$i]]);
-            if ($i < (count($photosFileID)-1)) {
-                $photo .= ',';
-            }
-        }
-
-        $url = $this->telegramUrl . 'bot' . $this->token . '/sendMediaGroup?chat_id=' . $chatID .
-            '&caption=' . $text . '&media=[' . $photo . ']';
-        $this->httpService->get($url);
-        return $url;
     }
 }
